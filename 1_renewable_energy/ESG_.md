@@ -80,3 +80,11 @@
         
 ![풀무원](image-6.png)
 
+
+출처 
+
+**기업 ESG 보고서**
+- sk 이노베이션(https://www.skens.com/m/kr/sk/sustainability/list.do)
+- 카카오(https://www.kakaocorp.com/page/responsible/esg)
+- (주)LG(https://www.lg.co.kr/esg/report)
+- 풀무원(https://www.pulmuone.co.kr/pulmuone/sustainability/listreport.do#)
