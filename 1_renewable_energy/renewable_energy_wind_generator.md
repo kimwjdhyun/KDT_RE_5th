@@ -7,12 +7,16 @@
 ### **2. 원리**
 * 블레이드가 회전하면서 발생하는 기계에너지를 발전기를 통해 전기에너지로 변환하는 원리
 
+
 ![풍력발전의 원리](https://kweia.or.kr/theme/basic/page/images/wind_01.png)
+
 
 ----
 ### **3. 분류**
 
+
 ![수평축 풍력발전기](https://kweia.or.kr/theme/basic/page/images/wind_03.png)
+
 
 >수평축 풍력발전기
 >
@@ -21,7 +25,9 @@
 > * 블레이드 전면을 바람 방향에 맞추기 위해 나셀을 360° 회전시키는 요잉 장치가 필요
 
 
+
 ![수직축 풍력발전기](https://kweia.or.kr/theme/basic/page/images/wind_04.png)
+
 
 >수직축 풍력발전기
 >
