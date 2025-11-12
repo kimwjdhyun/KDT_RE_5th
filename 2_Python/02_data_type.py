@@ -70,5 +70,5 @@ print(10 + 5.0) # 15.0
 
 # 문자열로 변환 : str()
 # 논리형으로 변환 : bool()
-print (bool(1))
+print (bool(1)) # True
 
