@@ -15,16 +15,17 @@ my_str2 = " " # 공백 문자열
 my_str3 = "안녕하세요"
 
 # 문자열 여러줄로 만들기
-multi_str = """코딩을하는
+multi_str = ("""
+코딩을하는
 처음 배우는
 파이썬 언어
-"""
+""")
 print(multi_str)
 print(type(my_str1)) #<class 'str'>
 
 # 따옴표 속에 따옴표 쓰기
 print("'python'코딩언어")
-# print(""에러"")
+# print(""에러"") 
 
 #불리언형 = 논리형 (boolean, bool)
 # 참과 거짓을 표현하는 자료형
@@ -71,4 +72,37 @@ print(10 + 5.0) # 15.0
 # 문자열로 변환 : str()
 # 논리형으로 변환 : bool()
 print (bool(1)) # True
+
+# ----------------
+# 문자열 포맷팅 (f-string)
+# 문자열 안에 변수를 쓸 수 있도록 해주는 기능
+name = "정현" 
+age = 28
+
+print("내 이름은 ", name, "이고, 나이는", age, "입니다.")
+print(f"내 이름은 {name} 이고, 나이는 {age}입니다.")
+
+# 실습 1. 영화정보 출력하기
+
+title = 'Léon'
+director = 'Luc Besson'
+year = '1994'
+genre = 'action-thriller'
+
+print(f'Title : {title} Director : {director} Year : {year} Genre : {genre}')
+
+
+# 실습 2. 자기소개 하기
+
+name = '김정현'
+age = '28살'
+mbti = 'ENFP'
+
+print(f"""
+      안녕하세요.
+      제 이름은 {name}이고,
+      {age}입니다.
+      제 MBTI는 {mbti}에요.
+      """ )
+# """ 문자열 여러줄 만드는 법 기억하기!!"""
 
