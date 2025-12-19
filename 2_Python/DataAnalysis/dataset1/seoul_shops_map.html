@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_726201744a2ce6659baa14e259ca60d8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; right: 50px; width: 200px; height: 170px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <b>가격대 범례</b><br>
+    <i class="fa fa-circle" style="color:green"></i> 중저가<br>
+    <i class="fa fa-circle" style="color:blue"></i> 중가<br>
+    <i class="fa fa-circle" style="color:orange"></i> 고가<br>
+    <i class="fa fa-circle" style="color:red"></i> 명품
+    </div>
+    
+    
+            <div class="folium-map" id="map_726201744a2ce6659baa14e259ca60d8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_726201744a2ce6659baa14e259ca60d8 = L.map(
+                "map_726201744a2ce6659baa14e259ca60d8",
+                {
+                    center: [37.5665, 127.078],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1eb82264c97661dae14ee0111a929efb = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1eb82264c97661dae14ee0111a929efb.addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+            var circle_marker_d23f88d6b79f9d9aa6ccb19d5f4509b6 = L.circleMarker(
+                [37.442563937492594, 127.01161843601662],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_34043f9355b1e6f760ef44fc559d74ae = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1f2e1a5b515091f12a8c82c0390bc55a = $(`<div id="html_1f2e1a5b515091f12a8c82c0390bc55a" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 1</b><br>평점: 4.6⭐<br>리뷰: 380개<br>가격대: 고가<br>브랜드 타입: 럭셔리<br>취급 브랜드: 63개<br>매장 면적: 214평</div>`)[0];
+                popup_34043f9355b1e6f760ef44fc559d74ae.setContent(html_1f2e1a5b515091f12a8c82c0390bc55a);
+            
+        
+
+        circle_marker_d23f88d6b79f9d9aa6ccb19d5f4509b6.bindPopup(popup_34043f9355b1e6f760ef44fc559d74ae)
+        ;
+
+        
+    
+    
+            var circle_marker_0ba2f582f116700b050e09269e19c721 = L.circleMarker(
+                [37.40523362694297, 127.0453087849217],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_10f8c493c1d7b5b92d48d97e7a564fd5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0e4e8aee582f64a92b4cb7e8116bdee3 = $(`<div id="html_0e4e8aee582f64a92b4cb7e8116bdee3" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 2</b><br>평점: 3.9⭐<br>리뷰: 685개<br>가격대: 고가<br>브랜드 타입: 디자이너<br>취급 브랜드: 31개<br>매장 면적: 191평</div>`)[0];
+                popup_10f8c493c1d7b5b92d48d97e7a564fd5.setContent(html_0e4e8aee582f64a92b4cb7e8116bdee3);
+            
+        
+
+        circle_marker_0ba2f582f116700b050e09269e19c721.bindPopup(popup_10f8c493c1d7b5b92d48d97e7a564fd5)
+        ;
+
+        
+    
+    
+            var circle_marker_8f385e73d41a2ba92c590acab2251892 = L.circleMarker(
+                [37.434934468153955, 126.93729657115118],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_e5149e21643a5539e675db3cc872cbd8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7b12f22e10dd38c98581b1b4e4f8ec70 = $(`<div id="html_7b12f22e10dd38c98581b1b4e4f8ec70" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 3</b><br>평점: 4.6⭐<br>리뷰: 785개<br>가격대: 중저가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 32개<br>매장 면적: 157평</div>`)[0];
+                popup_e5149e21643a5539e675db3cc872cbd8.setContent(html_7b12f22e10dd38c98581b1b4e4f8ec70);
+            
+        
+
+        circle_marker_8f385e73d41a2ba92c590acab2251892.bindPopup(popup_e5149e21643a5539e675db3cc872cbd8)
+        ;
+
+        
+    
+    
+            var circle_marker_e99dd89cd3f5abacb78e0efd5093199e = L.circleMarker(
+                [37.431768206324016, 126.99273485128502],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_d53e33a6a6ac72f6ef08587ffce4983b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9b68b459bcc127c29f214ee9ac56d181 = $(`<div id="html_9b68b459bcc127c29f214ee9ac56d181" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 4</b><br>평점: 3.9⭐<br>리뷰: 776개<br>가격대: 중가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 58개<br>매장 면적: 197평</div>`)[0];
+                popup_d53e33a6a6ac72f6ef08587ffce4983b.setContent(html_9b68b459bcc127c29f214ee9ac56d181);
+            
+        
+
+        circle_marker_e99dd89cd3f5abacb78e0efd5093199e.bindPopup(popup_d53e33a6a6ac72f6ef08587ffce4983b)
+        ;
+
+        
+    
+    
+            var circle_marker_78746a4e5171668f0857e86b799117ab = L.circleMarker(
+                [37.51266834423891, 127.02427623468222],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_ade89390dff86bc8011ff7aec5ee822c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_419a913fe8321d05ed797f274d34c53b = $(`<div id="html_419a913fe8321d05ed797f274d34c53b" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 5</b><br>평점: 4.4⭐<br>리뷰: 309개<br>가격대: 중저가<br>브랜드 타입: 럭셔리<br>취급 브랜드: 92개<br>매장 면적: 53평</div>`)[0];
+                popup_ade89390dff86bc8011ff7aec5ee822c.setContent(html_419a913fe8321d05ed797f274d34c53b);
+            
+        
+
+        circle_marker_78746a4e5171668f0857e86b799117ab.bindPopup(popup_ade89390dff86bc8011ff7aec5ee822c)
+        ;
+
+        
+    
+    
+            var circle_marker_36e4609f3fc117d2cffb5c9581dba395 = L.circleMarker(
+                [37.52910244105341, 127.03457657383034],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_2de9f74931b2e7bca600bb148babe4da = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_367e3c609844f91ec0068cc4cd54b05d = $(`<div id="html_367e3c609844f91ec0068cc4cd54b05d" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 6</b><br>평점: 3.6⭐<br>리뷰: 293개<br>가격대: 명품<br>브랜드 타입: 디자이너<br>취급 브랜드: 77개<br>매장 면적: 343평</div>`)[0];
+                popup_2de9f74931b2e7bca600bb148babe4da.setContent(html_367e3c609844f91ec0068cc4cd54b05d);
+            
+        
+
+        circle_marker_36e4609f3fc117d2cffb5c9581dba395.bindPopup(popup_2de9f74931b2e7bca600bb148babe4da)
+        ;
+
+        
+    
+    
+            var circle_marker_eb4b0e2b01e306c399d7a73737b8cadc = L.circleMarker(
+                [37.570736763415724, 126.9344230073313],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_64913792a41883d5180361466920ae41 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_44e20012ca9a1d9ffc4b85c0aa60b4e5 = $(`<div id="html_44e20012ca9a1d9ffc4b85c0aa60b4e5" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 7</b><br>평점: 3.8⭐<br>리뷰: 545개<br>가격대: 중저가<br>브랜드 타입: 스트릿<br>취급 브랜드: 82개<br>매장 면적: 251평</div>`)[0];
+                popup_64913792a41883d5180361466920ae41.setContent(html_44e20012ca9a1d9ffc4b85c0aa60b4e5);
+            
+        
+
+        circle_marker_eb4b0e2b01e306c399d7a73737b8cadc.bindPopup(popup_64913792a41883d5180361466920ae41)
+        ;
+
+        
+    
+    
+            var circle_marker_bf70dd22cc51dc8bf878de141071710e = L.circleMarker(
+                [37.48843279232607, 126.91957660095132],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_320e37911ad45c1b282285db31bcc237 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0625784dc8ff5f9936fec3fcba1586a0 = $(`<div id="html_0625784dc8ff5f9936fec3fcba1586a0" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 8</b><br>평점: 4.7⭐<br>리뷰: 757개<br>가격대: 고가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 95개<br>매장 면적: 433평</div>`)[0];
+                popup_320e37911ad45c1b282285db31bcc237.setContent(html_0625784dc8ff5f9936fec3fcba1586a0);
+            
+        
+
+        circle_marker_bf70dd22cc51dc8bf878de141071710e.bindPopup(popup_320e37911ad45c1b282285db31bcc237)
+        ;
+
+        
+    
+    
+            var circle_marker_0d06fb27a4596109ad48af4f47fd399f = L.circleMarker(
+                [37.597135255494756, 126.96066772204205],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_c6d0404223e890f949b4449223fd3193 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_02b882bfb0ea28534e882140d2f1f190 = $(`<div id="html_02b882bfb0ea28534e882140d2f1f190" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 9</b><br>평점: 3.9⭐<br>리뷰: 721개<br>가격대: 중저가<br>브랜드 타입: 스트릿<br>취급 브랜드: 11개<br>매장 면적: 77평</div>`)[0];
+                popup_c6d0404223e890f949b4449223fd3193.setContent(html_02b882bfb0ea28534e882140d2f1f190);
+            
+        
+
+        circle_marker_0d06fb27a4596109ad48af4f47fd399f.bindPopup(popup_c6d0404223e890f949b4449223fd3193)
+        ;
+
+        
+    
+    
+            var circle_marker_cf9299381ac2b55eb7f29a57d9687e10 = L.circleMarker(
+                [37.41661998862609, 127.05308098302484],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_cea395bd992f7fcd926b93c85c4ecee5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_983de81a02dc257143d086d03ec72e52 = $(`<div id="html_983de81a02dc257143d086d03ec72e52" style="width: 100.0%; height: 100.0%;"><b>강남구 편집샵 10</b><br>평점: 4.0⭐<br>리뷰: 160개<br>가격대: 고가<br>브랜드 타입: 럭셔리<br>취급 브랜드: 62개<br>매장 면적: 324평</div>`)[0];
+                popup_cea395bd992f7fcd926b93c85c4ecee5.setContent(html_983de81a02dc257143d086d03ec72e52);
+            
+        
+
+        circle_marker_cf9299381ac2b55eb7f29a57d9687e10.bindPopup(popup_cea395bd992f7fcd926b93c85c4ecee5)
+        ;
+
+        
+    
+    
+            var circle_marker_01103ae2c5fdcff757a8bd8545642dc1 = L.circleMarker(
+                [37.45158968844521, 127.00011238351546],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_f7e2255225d0bca4ee57f5570f8747f1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_031d8f97771e7d596b4338b7823591f3 = $(`<div id="html_031d8f97771e7d596b4338b7823591f3" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 1</b><br>평점: 4.6⭐<br>리뷰: 679개<br>가격대: 고가<br>브랜드 타입: 스트릿<br>취급 브랜드: 94개<br>매장 면적: 225평</div>`)[0];
+                popup_f7e2255225d0bca4ee57f5570f8747f1.setContent(html_031d8f97771e7d596b4338b7823591f3);
+            
+        
+
+        circle_marker_01103ae2c5fdcff757a8bd8545642dc1.bindPopup(popup_f7e2255225d0bca4ee57f5570f8747f1)
+        ;
+
+        
+    
+    
+            var circle_marker_e7eb7e5d3a724f9388aa902fb37251b7 = L.circleMarker(
+                [37.43050653340229, 127.00271322801817],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_de2622a2189abdfad78077e74cf89708 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0e3b2bdb4ec4a2c83abcb4878dc57b10 = $(`<div id="html_0e3b2bdb4ec4a2c83abcb4878dc57b10" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 2</b><br>평점: 4.2⭐<br>리뷰: 236개<br>가격대: 명품<br>브랜드 타입: 디자이너<br>취급 브랜드: 63개<br>매장 면적: 208평</div>`)[0];
+                popup_de2622a2189abdfad78077e74cf89708.setContent(html_0e3b2bdb4ec4a2c83abcb4878dc57b10);
+            
+        
+
+        circle_marker_e7eb7e5d3a724f9388aa902fb37251b7.bindPopup(popup_de2622a2189abdfad78077e74cf89708)
+        ;
+
+        
+    
+    
+            var circle_marker_3220f6f81a1a5d5c314a3927ba65a35e = L.circleMarker(
+                [37.59759469882894, 127.06829711070466],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_7fcc7ba6672e3d22c6a13edd4d0a8be3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c899fff850cfa91f6bd7ff557f74a3c6 = $(`<div id="html_c899fff850cfa91f6bd7ff557f74a3c6" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 3</b><br>평점: 4.2⭐<br>리뷰: 430개<br>가격대: 중저가<br>브랜드 타입: 해외 브랜드<br>취급 브랜드: 40개<br>매장 면적: 99평</div>`)[0];
+                popup_7fcc7ba6672e3d22c6a13edd4d0a8be3.setContent(html_c899fff850cfa91f6bd7ff557f74a3c6);
+            
+        
+
+        circle_marker_3220f6f81a1a5d5c314a3927ba65a35e.bindPopup(popup_7fcc7ba6672e3d22c6a13edd4d0a8be3)
+        ;
+
+        
+    
+    
+            var circle_marker_c5518c00cbc2217ad17eef60774ce253 = L.circleMarker(
+                [37.54922197498116, 126.9099140634175],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_c3103b942888c999d2a8d604c03b138a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_570c9d6526290c5b760cf6742b29a8df = $(`<div id="html_570c9d6526290c5b760cf6742b29a8df" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 4</b><br>평점: 4.8⭐<br>리뷰: 661개<br>가격대: 중가<br>브랜드 타입: 스트릿<br>취급 브랜드: 25개<br>매장 면적: 277평</div>`)[0];
+                popup_c3103b942888c999d2a8d604c03b138a.setContent(html_570c9d6526290c5b760cf6742b29a8df);
+            
+        
+
+        circle_marker_c5518c00cbc2217ad17eef60774ce253.bindPopup(popup_c3103b942888c999d2a8d604c03b138a)
+        ;
+
+        
+    
+    
+            var circle_marker_97be935328ac767ee600434f0440a11a = L.circleMarker(
+                [37.47154041998828, 126.91535443673659],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_28166488d154125592b893d314e60305 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2ceb07c4930d6782bf2c038c2861e9cf = $(`<div id="html_2ceb07c4930d6782bf2c038c2861e9cf" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 5</b><br>평점: 4.6⭐<br>리뷰: 378개<br>가격대: 중가<br>브랜드 타입: 스트릿<br>취급 브랜드: 78개<br>매장 면적: 392평</div>`)[0];
+                popup_28166488d154125592b893d314e60305.setContent(html_2ceb07c4930d6782bf2c038c2861e9cf);
+            
+        
+
+        circle_marker_97be935328ac767ee600434f0440a11a.bindPopup(popup_28166488d154125592b893d314e60305)
+        ;
+
+        
+    
+    
+            var circle_marker_551c660453a5d806389ecf65ee468f2b = L.circleMarker(
+                [37.469084832372026, 126.99094639151973],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_e88dbc83fa00463f44e44a6102341906 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e30c360bb380023080ccc6862aaf0877 = $(`<div id="html_e30c360bb380023080ccc6862aaf0877" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 6</b><br>평점: 3.7⭐<br>리뷰: 257개<br>가격대: 고가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 67개<br>매장 면적: 483평</div>`)[0];
+                popup_e88dbc83fa00463f44e44a6102341906.setContent(html_e30c360bb380023080ccc6862aaf0877);
+            
+        
+
+        circle_marker_551c660453a5d806389ecf65ee468f2b.bindPopup(popup_e88dbc83fa00463f44e44a6102341906)
+        ;
+
+        
+    
+    
+            var circle_marker_3cd1d477fd5671f81d13e3f8e3f28ae6 = L.circleMarker(
+                [37.50418998519277, 126.92339671053732],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_cc444df68180fafd5ba0b46895db79ab = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_18537205f13761744f91b34e107adb0f = $(`<div id="html_18537205f13761744f91b34e107adb0f" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 7</b><br>평점: 4.8⭐<br>리뷰: 200개<br>가격대: 고가<br>브랜드 타입: 스트릿<br>취급 브랜드: 53개<br>매장 면적: 484평</div>`)[0];
+                popup_cc444df68180fafd5ba0b46895db79ab.setContent(html_18537205f13761744f91b34e107adb0f);
+            
+        
+
+        circle_marker_3cd1d477fd5671f81d13e3f8e3f28ae6.bindPopup(popup_cc444df68180fafd5ba0b46895db79ab)
+        ;
+
+        
+    
+    
+            var circle_marker_86c679a0a6f5b50921336fbeefc24561 = L.circleMarker(
+                [37.55742147809676, 126.91929554956761],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_f8d16af5aa24664e26c8d59b0c9698b3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f50edb4f76c05f0193ceeb6a7543c6e7 = $(`<div id="html_f50edb4f76c05f0193ceeb6a7543c6e7" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 8</b><br>평점: 4.6⭐<br>리뷰: 151개<br>가격대: 고가<br>브랜드 타입: 럭셔리<br>취급 브랜드: 28개<br>매장 면적: 455평</div>`)[0];
+                popup_f8d16af5aa24664e26c8d59b0c9698b3.setContent(html_f50edb4f76c05f0193ceeb6a7543c6e7);
+            
+        
+
+        circle_marker_86c679a0a6f5b50921336fbeefc24561.bindPopup(popup_f8d16af5aa24664e26c8d59b0c9698b3)
+        ;
+
+        
+    
+    
+            var circle_marker_76d9d2ad0ad9b83ad6425511a7cbc793 = L.circleMarker(
+                [37.474659577339324, 126.95846502233806],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_0f4ee6ba26b1556a16eb19d92fb8b3e2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1a65f0acb3aca41583142de1b21c234a = $(`<div id="html_1a65f0acb3aca41583142de1b21c234a" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 9</b><br>평점: 4.2⭐<br>리뷰: 417개<br>가격대: 고가<br>브랜드 타입: 스트릿<br>취급 브랜드: 67개<br>매장 면적: 389평</div>`)[0];
+                popup_0f4ee6ba26b1556a16eb19d92fb8b3e2.setContent(html_1a65f0acb3aca41583142de1b21c234a);
+            
+        
+
+        circle_marker_76d9d2ad0ad9b83ad6425511a7cbc793.bindPopup(popup_0f4ee6ba26b1556a16eb19d92fb8b3e2)
+        ;
+
+        
+    
+    
+            var circle_marker_dcf534e53c7b36af9735e4941233f39f = L.circleMarker(
+                [37.46730464233523, 126.92115466856892],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_caf88c3fb9804467285e62bb9956bfdf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dd328abb326e061da1e66f4d4bb36fc2 = $(`<div id="html_dd328abb326e061da1e66f4d4bb36fc2" style="width: 100.0%; height: 100.0%;"><b>성동구 편집샵 10</b><br>평점: 4.8⭐<br>리뷰: 215개<br>가격대: 중가<br>브랜드 타입: 해외 브랜드<br>취급 브랜드: 88개<br>매장 면적: 150평</div>`)[0];
+                popup_caf88c3fb9804467285e62bb9956bfdf.setContent(html_dd328abb326e061da1e66f4d4bb36fc2);
+            
+        
+
+        circle_marker_dcf534e53c7b36af9735e4941233f39f.bindPopup(popup_caf88c3fb9804467285e62bb9956bfdf)
+        ;
+
+        
+    
+    
+            var circle_marker_138761ca9b7321f72f249c139fd7f11b = L.circleMarker(
+                [37.50424629357731, 127.06849015769093],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_0901695cfa7eba1fbac06614594c3e9e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4937ce64e3dc650d513488d16184d81e = $(`<div id="html_4937ce64e3dc650d513488d16184d81e" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 1</b><br>평점: 4.2⭐<br>리뷰: 70개<br>가격대: 중가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 65개<br>매장 면적: 470평</div>`)[0];
+                popup_0901695cfa7eba1fbac06614594c3e9e.setContent(html_4937ce64e3dc650d513488d16184d81e);
+            
+        
+
+        circle_marker_138761ca9b7321f72f249c139fd7f11b.bindPopup(popup_0901695cfa7eba1fbac06614594c3e9e)
+        ;
+
+        
+    
+    
+            var circle_marker_ffb2bb9b5aed73c429f8e4c2c30ccffa = L.circleMarker(
+                [37.5945933095863, 126.99087508940399],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_0bfb4c692e4144d366162e6216abd726 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d051bad628250762e54613ec3d04bf30 = $(`<div id="html_d051bad628250762e54613ec3d04bf30" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 2</b><br>평점: 4.9⭐<br>리뷰: 162개<br>가격대: 중가<br>브랜드 타입: 스트릿<br>취급 브랜드: 52개<br>매장 면적: 274평</div>`)[0];
+                popup_0bfb4c692e4144d366162e6216abd726.setContent(html_d051bad628250762e54613ec3d04bf30);
+            
+        
+
+        circle_marker_ffb2bb9b5aed73c429f8e4c2c30ccffa.bindPopup(popup_0bfb4c692e4144d366162e6216abd726)
+        ;
+
+        
+    
+    
+            var circle_marker_e07f8dbaadb5c52b721df5cca1cdc1aa = L.circleMarker(
+                [37.4969525159865, 127.07514841422638],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_856a4b7a95be48ae1db47ab8dcfc99d2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_acc85ba65bfc8d92fdb6dc3c4bc59707 = $(`<div id="html_acc85ba65bfc8d92fdb6dc3c4bc59707" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 3</b><br>평점: 4.6⭐<br>리뷰: 103개<br>가격대: 중가<br>브랜드 타입: 디자이너<br>취급 브랜드: 13개<br>매장 면적: 421평</div>`)[0];
+                popup_856a4b7a95be48ae1db47ab8dcfc99d2.setContent(html_acc85ba65bfc8d92fdb6dc3c4bc59707);
+            
+        
+
+        circle_marker_e07f8dbaadb5c52b721df5cca1cdc1aa.bindPopup(popup_856a4b7a95be48ae1db47ab8dcfc99d2)
+        ;
+
+        
+    
+    
+            var circle_marker_b00ce7bfce4578c444e94554be095705 = L.circleMarker(
+                [37.417109997245106, 126.91333250040967],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_603ef01e1ec78a30730a8102da600c6a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e1df7b24d137375317c87bbcffd50925 = $(`<div id="html_e1df7b24d137375317c87bbcffd50925" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 4</b><br>평점: 4.7⭐<br>리뷰: 96개<br>가격대: 중가<br>브랜드 타입: 스트릿<br>취급 브랜드: 92개<br>매장 면적: 491평</div>`)[0];
+                popup_603ef01e1ec78a30730a8102da600c6a.setContent(html_e1df7b24d137375317c87bbcffd50925);
+            
+        
+
+        circle_marker_b00ce7bfce4578c444e94554be095705.bindPopup(popup_603ef01e1ec78a30730a8102da600c6a)
+        ;
+
+        
+    
+    
+            var circle_marker_120b7c8637e7e38911fb9b2fc3c6d2ed = L.circleMarker(
+                [37.542599535286826, 127.00075545508648],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_8e42f5f9e0fb67f4e24cf076ca2d5363 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fdb20f619255489c3f0068f86df17e74 = $(`<div id="html_fdb20f619255489c3f0068f86df17e74" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 5</b><br>평점: 4.8⭐<br>리뷰: 113개<br>가격대: 중가<br>브랜드 타입: 럭셔리<br>취급 브랜드: 97개<br>매장 면적: 442평</div>`)[0];
+                popup_8e42f5f9e0fb67f4e24cf076ca2d5363.setContent(html_fdb20f619255489c3f0068f86df17e74);
+            
+        
+
+        circle_marker_120b7c8637e7e38911fb9b2fc3c6d2ed.bindPopup(popup_8e42f5f9e0fb67f4e24cf076ca2d5363)
+        ;
+
+        
+    
+    
+            var circle_marker_9190616cea1203ab9e7a39e7f341bd61 = L.circleMarker(
+                [37.483109355689024, 127.06771678621777],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_1e2c441b3458d1f080cd5aab1228d64e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ddee748c1b080b0c46f9a68d3a8d0081 = $(`<div id="html_ddee748c1b080b0c46f9a68d3a8d0081" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 6</b><br>평점: 4.5⭐<br>리뷰: 224개<br>가격대: 명품<br>브랜드 타입: 럭셔리<br>취급 브랜드: 94개<br>매장 면적: 437평</div>`)[0];
+                popup_1e2c441b3458d1f080cd5aab1228d64e.setContent(html_ddee748c1b080b0c46f9a68d3a8d0081);
+            
+        
+
+        circle_marker_9190616cea1203ab9e7a39e7f341bd61.bindPopup(popup_1e2c441b3458d1f080cd5aab1228d64e)
+        ;
+
+        
+    
+    
+            var circle_marker_ffa4bf27d895f94040da6a9967094050 = L.circleMarker(
+                [37.421850729322294, 127.03049093153528],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_212bde5288d9ac108e4c8dd5e4080293 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c8a49b54432784543251f3cbd6b896e = $(`<div id="html_1c8a49b54432784543251f3cbd6b896e" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 7</b><br>평점: 4.0⭐<br>리뷰: 628개<br>가격대: 중저가<br>브랜드 타입: 럭셔리<br>취급 브랜드: 30개<br>매장 면적: 276평</div>`)[0];
+                popup_212bde5288d9ac108e4c8dd5e4080293.setContent(html_1c8a49b54432784543251f3cbd6b896e);
+            
+        
+
+        circle_marker_ffa4bf27d895f94040da6a9967094050.bindPopup(popup_212bde5288d9ac108e4c8dd5e4080293)
+        ;
+
+        
+    
+    
+            var circle_marker_d1f751b982c65d5216f2c784f90d7cad = L.circleMarker(
+                [37.47992975672894, 127.01118899833646],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_c338eb8f28a7af606a1a356c2284a1d5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8ca3c08e54b2b787bd1cda3747c662ab = $(`<div id="html_8ca3c08e54b2b787bd1cda3747c662ab" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 8</b><br>평점: 4.6⭐<br>리뷰: 767개<br>가격대: 중가<br>브랜드 타입: 디자이너<br>취급 브랜드: 82개<br>매장 면적: 446평</div>`)[0];
+                popup_c338eb8f28a7af606a1a356c2284a1d5.setContent(html_8ca3c08e54b2b787bd1cda3747c662ab);
+            
+        
+
+        circle_marker_d1f751b982c65d5216f2c784f90d7cad.bindPopup(popup_c338eb8f28a7af606a1a356c2284a1d5)
+        ;
+
+        
+    
+    
+            var circle_marker_5a065851a1b346a7455e18c3a6614720 = L.circleMarker(
+                [37.59873716763679, 126.90460652586158],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_b939243f0017860f7def800eac39b92a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6ee822ac0d5fa313abde6ad88ca13a99 = $(`<div id="html_6ee822ac0d5fa313abde6ad88ca13a99" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 9</b><br>평점: 4.8⭐<br>리뷰: 577개<br>가격대: 중저가<br>브랜드 타입: 럭셔리<br>취급 브랜드: 71개<br>매장 면적: 461평</div>`)[0];
+                popup_b939243f0017860f7def800eac39b92a.setContent(html_6ee822ac0d5fa313abde6ad88ca13a99);
+            
+        
+
+        circle_marker_5a065851a1b346a7455e18c3a6614720.bindPopup(popup_b939243f0017860f7def800eac39b92a)
+        ;
+
+        
+    
+    
+            var circle_marker_0f115c2054c45548c8496b1313e496af = L.circleMarker(
+                [37.51090747000673, 126.95219855944694],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_b8e0238e791e06613c2b471d7f9aef94 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_47746e53f5c3270f1902ee4ec9f17d52 = $(`<div id="html_47746e53f5c3270f1902ee4ec9f17d52" style="width: 100.0%; height: 100.0%;"><b>용산구 편집샵 10</b><br>평점: 4.2⭐<br>리뷰: 467개<br>가격대: 중저가<br>브랜드 타입: 해외 브랜드<br>취급 브랜드: 18개<br>매장 면적: 381평</div>`)[0];
+                popup_b8e0238e791e06613c2b471d7f9aef94.setContent(html_47746e53f5c3270f1902ee4ec9f17d52);
+            
+        
+
+        circle_marker_0f115c2054c45548c8496b1313e496af.bindPopup(popup_b8e0238e791e06613c2b471d7f9aef94)
+        ;
+
+        
+    
+    
+            var circle_marker_818744228a3aac54971bca93d33ba341 = L.circleMarker(
+                [37.51661189243909, 127.02524765371571],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_0aa714ed3758f58f6fb76d34fcc4e7bf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f9b6b2b63fa42256710171aa6d8a62e8 = $(`<div id="html_f9b6b2b63fa42256710171aa6d8a62e8" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 1</b><br>평점: 4.7⭐<br>리뷰: 436개<br>가격대: 중저가<br>브랜드 타입: 디자이너<br>취급 브랜드: 97개<br>매장 면적: 253평</div>`)[0];
+                popup_0aa714ed3758f58f6fb76d34fcc4e7bf.setContent(html_f9b6b2b63fa42256710171aa6d8a62e8);
+            
+        
+
+        circle_marker_818744228a3aac54971bca93d33ba341.bindPopup(popup_0aa714ed3758f58f6fb76d34fcc4e7bf)
+        ;
+
+        
+    
+    
+            var circle_marker_7244c8a418f1ad50e0d9c8177261d2e6 = L.circleMarker(
+                [37.43195683079923, 126.9710822106668],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_16336bb60683f873857ac9fe0b9f04a1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b847570095df101e5e30b69b46bdfc5b = $(`<div id="html_b847570095df101e5e30b69b46bdfc5b" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 2</b><br>평점: 3.8⭐<br>리뷰: 599개<br>가격대: 중저가<br>브랜드 타입: 디자이너<br>취급 브랜드: 96개<br>매장 면적: 473평</div>`)[0];
+                popup_16336bb60683f873857ac9fe0b9f04a1.setContent(html_b847570095df101e5e30b69b46bdfc5b);
+            
+        
+
+        circle_marker_7244c8a418f1ad50e0d9c8177261d2e6.bindPopup(popup_16336bb60683f873857ac9fe0b9f04a1)
+        ;
+
+        
+    
+    
+            var circle_marker_ecc9a1b3a4fefa655190eae921399bc6 = L.circleMarker(
+                [37.46103172510511, 127.04828105465774],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_530335a07bb16ea9fb1d287ce11ada65 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b2159c29e64ff0c188891edd67d3b667 = $(`<div id="html_b2159c29e64ff0c188891edd67d3b667" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 3</b><br>평점: 4.0⭐<br>리뷰: 355개<br>가격대: 중저가<br>브랜드 타입: 디자이너<br>취급 브랜드: 43개<br>매장 면적: 476평</div>`)[0];
+                popup_530335a07bb16ea9fb1d287ce11ada65.setContent(html_b2159c29e64ff0c188891edd67d3b667);
+            
+        
+
+        circle_marker_ecc9a1b3a4fefa655190eae921399bc6.bindPopup(popup_530335a07bb16ea9fb1d287ce11ada65)
+        ;
+
+        
+    
+    
+            var circle_marker_6087f94a5eebbf604252741ce3e94b4d = L.circleMarker(
+                [37.5508784363012, 126.98722439666736],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_b7069b007a2a7b774e2dc96edb83d71f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0db3e246d658af4bfdfba72df172b2fb = $(`<div id="html_0db3e246d658af4bfdfba72df172b2fb" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 4</b><br>평점: 4.8⭐<br>리뷰: 135개<br>가격대: 고가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 44개<br>매장 면적: 301평</div>`)[0];
+                popup_b7069b007a2a7b774e2dc96edb83d71f.setContent(html_0db3e246d658af4bfdfba72df172b2fb);
+            
+        
+
+        circle_marker_6087f94a5eebbf604252741ce3e94b4d.bindPopup(popup_b7069b007a2a7b774e2dc96edb83d71f)
+        ;
+
+        
+    
+    
+            var circle_marker_6d63e141836fa57d3e4af72569856162 = L.circleMarker(
+                [37.582709869330046, 126.91261520291256],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_cfa2530ad5cb3294d3c719ff0da140f6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0c3789fc60bdadb48dc17395a4c4b8f1 = $(`<div id="html_0c3789fc60bdadb48dc17395a4c4b8f1" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 5</b><br>평점: 4.1⭐<br>리뷰: 613개<br>가격대: 중가<br>브랜드 타입: 해외 브랜드<br>취급 브랜드: 94개<br>매장 면적: 404평</div>`)[0];
+                popup_cfa2530ad5cb3294d3c719ff0da140f6.setContent(html_0c3789fc60bdadb48dc17395a4c4b8f1);
+            
+        
+
+        circle_marker_6d63e141836fa57d3e4af72569856162.bindPopup(popup_cfa2530ad5cb3294d3c719ff0da140f6)
+        ;
+
+        
+    
+    
+            var circle_marker_16ef5342d34821aa2a7c43f1ebb4215c = L.circleMarker(
+                [37.523680781754074, 126.97846990466535],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_5d3ce06e6912c397174e3c8072022db4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d5444dda907c4b5dc2350f841a101897 = $(`<div id="html_d5444dda907c4b5dc2350f841a101897" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 6</b><br>평점: 3.8⭐<br>리뷰: 404개<br>가격대: 명품<br>브랜드 타입: 럭셔리<br>취급 브랜드: 70개<br>매장 면적: 94평</div>`)[0];
+                popup_5d3ce06e6912c397174e3c8072022db4.setContent(html_d5444dda907c4b5dc2350f841a101897);
+            
+        
+
+        circle_marker_16ef5342d34821aa2a7c43f1ebb4215c.bindPopup(popup_5d3ce06e6912c397174e3c8072022db4)
+        ;
+
+        
+    
+    
+            var circle_marker_7dc01cd91e4f403339433a1bbfab26d5 = L.circleMarker(
+                [37.46895480772609, 127.01023328973217],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_4fd6e1e279790bbe14f33c3eb689f879 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8eaf682990a626f8675b3aa7d0425c98 = $(`<div id="html_8eaf682990a626f8675b3aa7d0425c98" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 7</b><br>평점: 4.0⭐<br>리뷰: 703개<br>가격대: 명품<br>브랜드 타입: 럭셔리<br>취급 브랜드: 62개<br>매장 면적: 451평</div>`)[0];
+                popup_4fd6e1e279790bbe14f33c3eb689f879.setContent(html_8eaf682990a626f8675b3aa7d0425c98);
+            
+        
+
+        circle_marker_7dc01cd91e4f403339433a1bbfab26d5.bindPopup(popup_4fd6e1e279790bbe14f33c3eb689f879)
+        ;
+
+        
+    
+    
+            var circle_marker_e48a95c3d4f24da2bae92fabcef96ace = L.circleMarker(
+                [37.57684063663986, 126.9758046529371],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_44f73c8dcfe1f9be2cac4652941b456e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6da35d4313f98d016bed15d299942dd2 = $(`<div id="html_6da35d4313f98d016bed15d299942dd2" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 8</b><br>평점: 4.0⭐<br>리뷰: 212개<br>가격대: 중가<br>브랜드 타입: 스트릿<br>취급 브랜드: 24개<br>매장 면적: 309평</div>`)[0];
+                popup_44f73c8dcfe1f9be2cac4652941b456e.setContent(html_6da35d4313f98d016bed15d299942dd2);
+            
+        
+
+        circle_marker_e48a95c3d4f24da2bae92fabcef96ace.bindPopup(popup_44f73c8dcfe1f9be2cac4652941b456e)
+        ;
+
+        
+    
+    
+            var circle_marker_64d9b42a99de6719b43407bf57cb0ae1 = L.circleMarker(
+                [37.53156581816805, 126.95930952439194],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_8a484b34d4ff34e9d35e3c34642df9c2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3007a258f0cbb4fe7393be51eccce0e6 = $(`<div id="html_3007a258f0cbb4fe7393be51eccce0e6" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 9</b><br>평점: 3.8⭐<br>리뷰: 301개<br>가격대: 중저가<br>브랜드 타입: 디자이너<br>취급 브랜드: 38개<br>매장 면적: 348평</div>`)[0];
+                popup_8a484b34d4ff34e9d35e3c34642df9c2.setContent(html_3007a258f0cbb4fe7393be51eccce0e6);
+            
+        
+
+        circle_marker_64d9b42a99de6719b43407bf57cb0ae1.bindPopup(popup_8a484b34d4ff34e9d35e3c34642df9c2)
+        ;
+
+        
+    
+    
+            var circle_marker_5306ef8f7694fe8e901fd85fde44cad5 = L.circleMarker(
+                [37.56847487821797, 126.96619665291414],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_b4ee703880d6398b00de73715c1a1630 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_537fc557b7fac768d7305e050e038529 = $(`<div id="html_537fc557b7fac768d7305e050e038529" style="width: 100.0%; height: 100.0%;"><b>종로구 편집샵 10</b><br>평점: 4.2⭐<br>리뷰: 218개<br>가격대: 중가<br>브랜드 타입: 럭셔리<br>취급 브랜드: 91개<br>매장 면적: 144평</div>`)[0];
+                popup_b4ee703880d6398b00de73715c1a1630.setContent(html_537fc557b7fac768d7305e050e038529);
+            
+        
+
+        circle_marker_5306ef8f7694fe8e901fd85fde44cad5.bindPopup(popup_b4ee703880d6398b00de73715c1a1630)
+        ;
+
+        
+    
+    
+            var circle_marker_c83bd2f0161cb84c17a9cadbb1d3ffd7 = L.circleMarker(
+                [37.49942934971383, 127.05730254787548],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_d1aa8abe9f03054fabc230339b5a125a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6923e54dd04f657b726b0bbde3d1379f = $(`<div id="html_6923e54dd04f657b726b0bbde3d1379f" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 1</b><br>평점: 4.8⭐<br>리뷰: 308개<br>가격대: 중가<br>브랜드 타입: 디자이너<br>취급 브랜드: 55개<br>매장 면적: 369평</div>`)[0];
+                popup_d1aa8abe9f03054fabc230339b5a125a.setContent(html_6923e54dd04f657b726b0bbde3d1379f);
+            
+        
+
+        circle_marker_c83bd2f0161cb84c17a9cadbb1d3ffd7.bindPopup(popup_d1aa8abe9f03054fabc230339b5a125a)
+        ;
+
+        
+    
+    
+            var circle_marker_3bfc617c1c6dc0a480d6b160e61fb5f5 = L.circleMarker(
+                [37.51895159205797, 126.99384135749655],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_3b0d4a8579e7c6caf09bdd0b82c12d6b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_24d5c5a67e2ebd20f90e9a96500a9198 = $(`<div id="html_24d5c5a67e2ebd20f90e9a96500a9198" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 2</b><br>평점: 4.8⭐<br>리뷰: 120개<br>가격대: 고가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 73개<br>매장 면적: 440평</div>`)[0];
+                popup_3b0d4a8579e7c6caf09bdd0b82c12d6b.setContent(html_24d5c5a67e2ebd20f90e9a96500a9198);
+            
+        
+
+        circle_marker_3bfc617c1c6dc0a480d6b160e61fb5f5.bindPopup(popup_3b0d4a8579e7c6caf09bdd0b82c12d6b)
+        ;
+
+        
+    
+    
+            var circle_marker_5b6915b62f87285936340c6fc8f326e0 = L.circleMarker(
+                [37.52388592478537, 126.92227558167507],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_0d82c8b5bf076d3491f306f1de4ce045 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9f50a0306e048100f6b97a185cbfcb5a = $(`<div id="html_9f50a0306e048100f6b97a185cbfcb5a" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 3</b><br>평점: 4.8⭐<br>리뷰: 421개<br>가격대: 고가<br>브랜드 타입: 스트릿<br>취급 브랜드: 79개<br>매장 면적: 154평</div>`)[0];
+                popup_0d82c8b5bf076d3491f306f1de4ce045.setContent(html_9f50a0306e048100f6b97a185cbfcb5a);
+            
+        
+
+        circle_marker_5b6915b62f87285936340c6fc8f326e0.bindPopup(popup_0d82c8b5bf076d3491f306f1de4ce045)
+        ;
+
+        
+    
+    
+            var circle_marker_b09ced6a6ff61def4de6a5dec4182a61 = L.circleMarker(
+                [37.43929369596906, 126.92807829778293],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_8f3a1c216447d7e88c8a63c142d9e4d7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_141bc6bf32f560d9d19a9567cb9b970a = $(`<div id="html_141bc6bf32f560d9d19a9567cb9b970a" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 4</b><br>평점: 4.5⭐<br>리뷰: 118개<br>가격대: 고가<br>브랜드 타입: 해외 브랜드<br>취급 브랜드: 80개<br>매장 면적: 348평</div>`)[0];
+                popup_8f3a1c216447d7e88c8a63c142d9e4d7.setContent(html_141bc6bf32f560d9d19a9567cb9b970a);
+            
+        
+
+        circle_marker_b09ced6a6ff61def4de6a5dec4182a61.bindPopup(popup_8f3a1c216447d7e88c8a63c142d9e4d7)
+        ;
+
+        
+    
+    
+            var circle_marker_b9fd176e1694b16e33a2fe2836b1f7f8 = L.circleMarker(
+                [37.43286148583671, 127.07512041120648],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_b1077974d77dcd08194283910852c13d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0a87c0a9ee242b44758f7f6fc39d7b8b = $(`<div id="html_0a87c0a9ee242b44758f7f6fc39d7b8b" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 5</b><br>평점: 4.5⭐<br>리뷰: 481개<br>가격대: 고가<br>브랜드 타입: 해외 브랜드<br>취급 브랜드: 93개<br>매장 면적: 168평</div>`)[0];
+                popup_b1077974d77dcd08194283910852c13d.setContent(html_0a87c0a9ee242b44758f7f6fc39d7b8b);
+            
+        
+
+        circle_marker_b9fd176e1694b16e33a2fe2836b1f7f8.bindPopup(popup_b1077974d77dcd08194283910852c13d)
+        ;
+
+        
+    
+    
+            var circle_marker_3b2ddec09a8ae32bbd8cd7200bcef741 = L.circleMarker(
+                [37.410649099514906, 127.00934882568502],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_099e367b50bde80e949b0dca4a3bc32c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6769123b1987d3736fe71e8e883b141c = $(`<div id="html_6769123b1987d3736fe71e8e883b141c" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 6</b><br>평점: 3.6⭐<br>리뷰: 633개<br>가격대: 명품<br>브랜드 타입: 럭셔리<br>취급 브랜드: 99개<br>매장 면적: 433평</div>`)[0];
+                popup_099e367b50bde80e949b0dca4a3bc32c.setContent(html_6769123b1987d3736fe71e8e883b141c);
+            
+        
+
+        circle_marker_3b2ddec09a8ae32bbd8cd7200bcef741.bindPopup(popup_099e367b50bde80e949b0dca4a3bc32c)
+        ;
+
+        
+    
+    
+            var circle_marker_c6e9f1ab359a9694f7f9dc60781d0e35 = L.circleMarker(
+                [37.42178298848145, 127.03945841514613],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_1f4af79284e2e5e391ce4da62e64c901 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_53380a200590ee9cfe25af5a8e61fa77 = $(`<div id="html_53380a200590ee9cfe25af5a8e61fa77" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 7</b><br>평점: 4.3⭐<br>리뷰: 573개<br>가격대: 고가<br>브랜드 타입: 스트릿<br>취급 브랜드: 80개<br>매장 면적: 390평</div>`)[0];
+                popup_1f4af79284e2e5e391ce4da62e64c901.setContent(html_53380a200590ee9cfe25af5a8e61fa77);
+            
+        
+
+        circle_marker_c6e9f1ab359a9694f7f9dc60781d0e35.bindPopup(popup_1f4af79284e2e5e391ce4da62e64c901)
+        ;
+
+        
+    
+    
+            var circle_marker_5906de035ffd640f5324e5f389fdc651 = L.circleMarker(
+                [37.5688368258526, 126.95200997071419],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_2b630d08d3e0e4a348e06c2246870808 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c1e41896e6db768a46eb75f2a99edea6 = $(`<div id="html_c1e41896e6db768a46eb75f2a99edea6" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 8</b><br>평점: 4.7⭐<br>리뷰: 120개<br>가격대: 중저가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 44개<br>매장 면적: 262평</div>`)[0];
+                popup_2b630d08d3e0e4a348e06c2246870808.setContent(html_c1e41896e6db768a46eb75f2a99edea6);
+            
+        
+
+        circle_marker_5906de035ffd640f5324e5f389fdc651.bindPopup(popup_2b630d08d3e0e4a348e06c2246870808)
+        ;
+
+        
+    
+    
+            var circle_marker_1413f35ac181bc2c95e4cbbec53881f4 = L.circleMarker(
+                [37.41709786624381, 126.97664423438675],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_f679da3ef04537994107be58beedf7f5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_417c0be90a6b1876e6b4f7254799d8ca = $(`<div id="html_417c0be90a6b1876e6b4f7254799d8ca" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 9</b><br>평점: 4.7⭐<br>리뷰: 94개<br>가격대: 중가<br>브랜드 타입: 디자이너<br>취급 브랜드: 72개<br>매장 면적: 139평</div>`)[0];
+                popup_f679da3ef04537994107be58beedf7f5.setContent(html_417c0be90a6b1876e6b4f7254799d8ca);
+            
+        
+
+        circle_marker_1413f35ac181bc2c95e4cbbec53881f4.bindPopup(popup_f679da3ef04537994107be58beedf7f5)
+        ;
+
+        
+    
+    
+            var circle_marker_a996d49a68e2088872e6bcb27fe2dc51 = L.circleMarker(
+                [37.49769949932767, 126.99091018528458],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_726201744a2ce6659baa14e259ca60d8);
+        
+    
+        var popup_5cb361c5e4e61d39d997b2b4de6905a6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3e917cd4502a3d3e42e94ecfbab09a81 = $(`<div id="html_3e917cd4502a3d3e42e94ecfbab09a81" style="width: 100.0%; height: 100.0%;"><b>마포구 편집샵 10</b><br>평점: 4.2⭐<br>리뷰: 702개<br>가격대: 중저가<br>브랜드 타입: 국내 브랜드<br>취급 브랜드: 34개<br>매장 면적: 283평</div>`)[0];
+                popup_5cb361c5e4e61d39d997b2b4de6905a6.setContent(html_3e917cd4502a3d3e42e94ecfbab09a81);
+            
+        
+
+        circle_marker_a996d49a68e2088872e6bcb27fe2dc51.bindPopup(popup_5cb361c5e4e61d39d997b2b4de6905a6)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f971e98811f8c1d0d08ce25f222dd0e1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; right: 50px; width: 200px; height: 150px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <b>평점 범례</b><br>
+    <i class="fa fa-circle" style="color:green"></i> 4.5 이상<br>
+    <i class="fa fa-circle" style="color:blue"></i> 4.0-4.5<br>
+    <i class="fa fa-circle" style="color:orange"></i> 3.5-4.0<br>
+    <i class="fa fa-circle" style="color:red"></i> 3.5 미만
+    </div>
+    
+    
+            <div class="folium-map" id="map_f971e98811f8c1d0d08ce25f222dd0e1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f971e98811f8c1d0d08ce25f222dd0e1 = L.map(
+                "map_f971e98811f8c1d0d08ce25f222dd0e1",
+                {
+                    center: [37.5665, 127.078],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8422468231cd595be3dfbe48ca753dad = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8422468231cd595be3dfbe48ca753dad.addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+            var circle_marker_423e6e8ddd7bcf1943c48394dfa3066b = L.circleMarker(
+                [37.511950226172594, 127.08050859251755],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_597020f4d304bd709e192765808e6a9f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bd476932c333cdea37c55ff64e16ebd3 = $(`<div id="html_bd476932c333cdea37c55ff64e16ebd3" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 1</b><br>평점: 4.6⭐<br>리뷰: 275개<br>가격: ₩</div>`)[0];
+                popup_597020f4d304bd709e192765808e6a9f.setContent(html_bd476932c333cdea37c55ff64e16ebd3);
+            
+        
+
+        circle_marker_423e6e8ddd7bcf1943c48394dfa3066b.bindPopup(popup_597020f4d304bd709e192765808e6a9f)
+        ;
+
+        
+    
+    
+            var circle_marker_24e65c837441c45e9c57bd1aac670d87 = L.circleMarker(
+                [37.52591027033335, 127.05716483952553],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_43b6245ab405b190c372f36bee7eafdc = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_26fd2c241d1fb13c4f2a4322a9f459b2 = $(`<div id="html_26fd2c241d1fb13c4f2a4322a9f459b2" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 2</b><br>평점: 3.9⭐<br>리뷰: 221개<br>가격: ₩₩₩</div>`)[0];
+                popup_43b6245ab405b190c372f36bee7eafdc.setContent(html_26fd2c241d1fb13c4f2a4322a9f459b2);
+            
+        
+
+        circle_marker_24e65c837441c45e9c57bd1aac670d87.bindPopup(popup_43b6245ab405b190c372f36bee7eafdc)
+        ;
+
+        
+    
+    
+            var circle_marker_4e0a8937a7decb56fbb8c3314df1e1c3 = L.circleMarker(
+                [37.458958119017865, 127.03538273123205],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_bb21f9b788205b8f088b7713f2f391eb = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_24791fbabec0c347e86670926443c265 = $(`<div id="html_24791fbabec0c347e86670926443c265" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 3</b><br>평점: 3.8⭐<br>리뷰: 179개<br>가격: ₩₩₩</div>`)[0];
+                popup_bb21f9b788205b8f088b7713f2f391eb.setContent(html_24791fbabec0c347e86670926443c265);
+            
+        
+
+        circle_marker_4e0a8937a7decb56fbb8c3314df1e1c3.bindPopup(popup_bb21f9b788205b8f088b7713f2f391eb)
+        ;
+
+        
+    
+    
+            var circle_marker_74403ce53df7a06b8da3f71f89fe16c7 = L.circleMarker(
+                [37.488915489977174, 127.07863143462585],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_e853584dc3b77c52318d09ffce702fc8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_85e11861e2f9fbbc85c990f8fe01283c = $(`<div id="html_85e11861e2f9fbbc85c990f8fe01283c" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 4</b><br>평점: 3.9⭐<br>리뷰: 131개<br>가격: ₩₩₩</div>`)[0];
+                popup_e853584dc3b77c52318d09ffce702fc8.setContent(html_85e11861e2f9fbbc85c990f8fe01283c);
+            
+        
+
+        circle_marker_74403ce53df7a06b8da3f71f89fe16c7.bindPopup(popup_e853584dc3b77c52318d09ffce702fc8)
+        ;
+
+        
+    
+    
+            var circle_marker_f093a2d4dd4c816ee33eb5750b019f0f = L.circleMarker(
+                [37.55717678761862, 126.90921727607204],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_ef518946a16ef65f8ed2138bfe9b6525 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ca2de2e00f981ec65caeeab8dc029ea9 = $(`<div id="html_ca2de2e00f981ec65caeeab8dc029ea9" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 5</b><br>평점: 4.9⭐<br>리뷰: 256개<br>가격: ₩₩</div>`)[0];
+                popup_ef518946a16ef65f8ed2138bfe9b6525.setContent(html_ca2de2e00f981ec65caeeab8dc029ea9);
+            
+        
+
+        circle_marker_f093a2d4dd4c816ee33eb5750b019f0f.bindPopup(popup_ef518946a16ef65f8ed2138bfe9b6525)
+        ;
+
+        
+    
+    
+            var circle_marker_c1a32181e5e7338a23bec0cb0462f8b4 = L.circleMarker(
+                [37.518953847445104, 127.004453407179],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_8df6139a22ef9303230f4c51b8decd16 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c88619e06d253f9c077d88f72178019b = $(`<div id="html_c88619e06d253f9c077d88f72178019b" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 6</b><br>평점: 4.4⭐<br>리뷰: 91개<br>가격: ₩</div>`)[0];
+                popup_8df6139a22ef9303230f4c51b8decd16.setContent(html_c88619e06d253f9c077d88f72178019b);
+            
+        
+
+        circle_marker_c1a32181e5e7338a23bec0cb0462f8b4.bindPopup(popup_8df6139a22ef9303230f4c51b8decd16)
+        ;
+
+        
+    
+    
+            var circle_marker_4c6a8d8c18ec373feb12871d8e2d932b = L.circleMarker(
+                [37.5543446045035, 126.96532315114933],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_a7a7cf1cc67b206c5e68e7e17dcf4148 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_609647a6a636960bfa3939f84bb258a7 = $(`<div id="html_609647a6a636960bfa3939f84bb258a7" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 7</b><br>평점: 4.8⭐<br>리뷰: 229개<br>가격: ₩₩₩</div>`)[0];
+                popup_a7a7cf1cc67b206c5e68e7e17dcf4148.setContent(html_609647a6a636960bfa3939f84bb258a7);
+            
+        
+
+        circle_marker_4c6a8d8c18ec373feb12871d8e2d932b.bindPopup(popup_a7a7cf1cc67b206c5e68e7e17dcf4148)
+        ;
+
+        
+    
+    
+            var circle_marker_943826f59d796dbdf104fc466c0e6e0f = L.circleMarker(
+                [37.52661141367977, 127.08709448604283],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_b00a3e26c2b4d43060bc64a044ed0edd = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_60a420d46615dc9069b931ef83660fd7 = $(`<div id="html_60a420d46615dc9069b931ef83660fd7" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 8</b><br>평점: 3.8⭐<br>리뷰: 58개<br>가격: ₩₩</div>`)[0];
+                popup_b00a3e26c2b4d43060bc64a044ed0edd.setContent(html_60a420d46615dc9069b931ef83660fd7);
+            
+        
+
+        circle_marker_943826f59d796dbdf104fc466c0e6e0f.bindPopup(popup_b00a3e26c2b4d43060bc64a044ed0edd)
+        ;
+
+        
+    
+    
+            var circle_marker_747494523fca65eede8cc6180acc9100 = L.circleMarker(
+                [37.46730773535585, 127.04169135768323],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_6dfbb75224b70c2be8c3e23ef67abf2d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9bfc0d8e7f931ac462361362300caaa6 = $(`<div id="html_9bfc0d8e7f931ac462361362300caaa6" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 9</b><br>평점: 4.2⭐<br>리뷰: 214개<br>가격: ₩₩₩</div>`)[0];
+                popup_6dfbb75224b70c2be8c3e23ef67abf2d.setContent(html_9bfc0d8e7f931ac462361362300caaa6);
+            
+        
+
+        circle_marker_747494523fca65eede8cc6180acc9100.bindPopup(popup_6dfbb75224b70c2be8c3e23ef67abf2d)
+        ;
+
+        
+    
+    
+            var circle_marker_2024745b67e30b1bb129ccf4d4e9b1b2 = L.circleMarker(
+                [37.413101909488674, 126.98910272394217],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_1416816591da2df322b25713ebb45705 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4454a68fed5e7ad70e6d828992afa565 = $(`<div id="html_4454a68fed5e7ad70e6d828992afa565" style="width: 100.0%; height: 100.0%;"><b>강남구 카페 10</b><br>평점: 4.5⭐<br>리뷰: 486개<br>가격: ₩₩₩</div>`)[0];
+                popup_1416816591da2df322b25713ebb45705.setContent(html_4454a68fed5e7ad70e6d828992afa565);
+            
+        
+
+        circle_marker_2024745b67e30b1bb129ccf4d4e9b1b2.bindPopup(popup_1416816591da2df322b25713ebb45705)
+        ;
+
+        
+    
+    
+            var circle_marker_1106562f734b26672e4b013d28882d35 = L.circleMarker(
+                [37.53630169264004, 127.00783246370968],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_bed61c876014c8659c672caa62420cf6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f7ab01e1685f26e9783217216fe37054 = $(`<div id="html_f7ab01e1685f26e9783217216fe37054" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 1</b><br>평점: 3.9⭐<br>리뷰: 220개<br>가격: ₩₩</div>`)[0];
+                popup_bed61c876014c8659c672caa62420cf6.setContent(html_f7ab01e1685f26e9783217216fe37054);
+            
+        
+
+        circle_marker_1106562f734b26672e4b013d28882d35.bindPopup(popup_bed61c876014c8659c672caa62420cf6)
+        ;
+
+        
+    
+    
+            var circle_marker_ae9aef3445acd3f35e9920d0140c7669 = L.circleMarker(
+                [37.436774550684405, 126.93695517417444],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_3c094930f42b36a8f0a930f93c27d2cd = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ab3aa4fdf339aacd7ce27d6341c9f20b = $(`<div id="html_ab3aa4fdf339aacd7ce27d6341c9f20b" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 2</b><br>평점: 4.5⭐<br>리뷰: 254개<br>가격: ₩₩</div>`)[0];
+                popup_3c094930f42b36a8f0a930f93c27d2cd.setContent(html_ab3aa4fdf339aacd7ce27d6341c9f20b);
+            
+        
+
+        circle_marker_ae9aef3445acd3f35e9920d0140c7669.bindPopup(popup_3c094930f42b36a8f0a930f93c27d2cd)
+        ;
+
+        
+    
+    
+            var circle_marker_3ac9d98a88d6eabdb3a1268b4b5a94c3 = L.circleMarker(
+                [37.43163796102494, 126.96507919806153],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_1ec76970b0dad875862bec94c5b1e346 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bd0b89949994c2695535c9c842be5dfd = $(`<div id="html_bd0b89949994c2695535c9c842be5dfd" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 3</b><br>평점: 4.5⭐<br>리뷰: 324개<br>가격: ₩₩₩</div>`)[0];
+                popup_1ec76970b0dad875862bec94c5b1e346.setContent(html_bd0b89949994c2695535c9c842be5dfd);
+            
+        
+
+        circle_marker_3ac9d98a88d6eabdb3a1268b4b5a94c3.bindPopup(popup_1ec76970b0dad875862bec94c5b1e346)
+        ;
+
+        
+    
+    
+            var circle_marker_07a363e3a6185d8694acb214da376d67 = L.circleMarker(
+                [37.46919107137807, 127.02876286335167],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_38305aba47ea88860c5a141c403067d2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4bb9fee7d8f3e5b13c448ed757eaff9e = $(`<div id="html_4bb9fee7d8f3e5b13c448ed757eaff9e" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 4</b><br>평점: 5.0⭐<br>리뷰: 113개<br>가격: ₩₩₩</div>`)[0];
+                popup_38305aba47ea88860c5a141c403067d2.setContent(html_4bb9fee7d8f3e5b13c448ed757eaff9e);
+            
+        
+
+        circle_marker_07a363e3a6185d8694acb214da376d67.bindPopup(popup_38305aba47ea88860c5a141c403067d2)
+        ;
+
+        
+    
+    
+            var circle_marker_9dbff0036a22cdd191e39072bb969872 = L.circleMarker(
+                [37.41790344426833, 127.0133180096956],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_5b43ad91597e9bef476e71dd3f058ab7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_900314e667a89ac67b5ce3b7e29e0039 = $(`<div id="html_900314e667a89ac67b5ce3b7e29e0039" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 5</b><br>평점: 4.8⭐<br>리뷰: 206개<br>가격: ₩</div>`)[0];
+                popup_5b43ad91597e9bef476e71dd3f058ab7.setContent(html_900314e667a89ac67b5ce3b7e29e0039);
+            
+        
+
+        circle_marker_9dbff0036a22cdd191e39072bb969872.bindPopup(popup_5b43ad91597e9bef476e71dd3f058ab7)
+        ;
+
+        
+    
+    
+            var circle_marker_6f65a7ec3138e3c39adae085c8ad378b = L.circleMarker(
+                [37.44686911430793, 127.03660707985186],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_a965a0857723ea9957349fde6001bf22 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_aded84e0bc0977c592e44ff9e3e0ad5d = $(`<div id="html_aded84e0bc0977c592e44ff9e3e0ad5d" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 6</b><br>평점: 4.9⭐<br>리뷰: 255개<br>가격: ₩₩₩</div>`)[0];
+                popup_a965a0857723ea9957349fde6001bf22.setContent(html_aded84e0bc0977c592e44ff9e3e0ad5d);
+            
+        
+
+        circle_marker_6f65a7ec3138e3c39adae085c8ad378b.bindPopup(popup_a965a0857723ea9957349fde6001bf22)
+        ;
+
+        
+    
+    
+            var circle_marker_aab1eaab8ae76dd5af5f6491c2d478b3 = L.circleMarker(
+                [37.40748557754652, 126.98204757391055],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_c0994aa508cccc6389deed49c13b204b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8d6905123b3c0508982514030712a138 = $(`<div id="html_8d6905123b3c0508982514030712a138" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 7</b><br>평점: 4.8⭐<br>리뷰: 445개<br>가격: ₩</div>`)[0];
+                popup_c0994aa508cccc6389deed49c13b204b.setContent(html_8d6905123b3c0508982514030712a138);
+            
+        
+
+        circle_marker_aab1eaab8ae76dd5af5f6491c2d478b3.bindPopup(popup_c0994aa508cccc6389deed49c13b204b)
+        ;
+
+        
+    
+    
+            var circle_marker_27298fdee9407e33c897a5deef2a78e7 = L.circleMarker(
+                [37.49675652675079, 127.04981966612237],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_4153c506c34ff2b982f4c11e40b5ef45 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2d8df8efd22eef825cf33637cb1f4961 = $(`<div id="html_2d8df8efd22eef825cf33637cb1f4961" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 8</b><br>평점: 4.8⭐<br>리뷰: 476개<br>가격: ₩₩₩</div>`)[0];
+                popup_4153c506c34ff2b982f4c11e40b5ef45.setContent(html_2d8df8efd22eef825cf33637cb1f4961);
+            
+        
+
+        circle_marker_27298fdee9407e33c897a5deef2a78e7.bindPopup(popup_4153c506c34ff2b982f4c11e40b5ef45)
+        ;
+
+        
+    
+    
+            var circle_marker_561c62ed6fc0988eff210483a67ff661 = L.circleMarker(
+                [37.51624562058111, 126.93205515786511],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_59f21447fe4e771315954b5d31ce8083 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f8e9d1692bd387545a301f71e8561abe = $(`<div id="html_f8e9d1692bd387545a301f71e8561abe" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 9</b><br>평점: 4.7⭐<br>리뷰: 463개<br>가격: ₩₩</div>`)[0];
+                popup_59f21447fe4e771315954b5d31ce8083.setContent(html_f8e9d1692bd387545a301f71e8561abe);
+            
+        
+
+        circle_marker_561c62ed6fc0988eff210483a67ff661.bindPopup(popup_59f21447fe4e771315954b5d31ce8083)
+        ;
+
+        
+    
+    
+            var circle_marker_b8b5e4d8ea32a0b4612decbacf6d8ced = L.circleMarker(
+                [37.53505911229217, 127.05255336707332],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_36ac388506a9dde21620a0b3edd9a007 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ce28359056746278776537a9f394948f = $(`<div id="html_ce28359056746278776537a9f394948f" style="width: 100.0%; height: 100.0%;"><b>종로구 카페 10</b><br>평점: 4.3⭐<br>리뷰: 260개<br>가격: ₩₩₩</div>`)[0];
+                popup_36ac388506a9dde21620a0b3edd9a007.setContent(html_ce28359056746278776537a9f394948f);
+            
+        
+
+        circle_marker_b8b5e4d8ea32a0b4612decbacf6d8ced.bindPopup(popup_36ac388506a9dde21620a0b3edd9a007)
+        ;
+
+        
+    
+    
+            var circle_marker_5955379a2950d0b4278502c858733455 = L.circleMarker(
+                [37.57299885049962, 127.01119674127757],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_cdb71e317e4bb99343b5826cf7e695ac = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_967b5c00b45cebf16e8ead34c899b2fe = $(`<div id="html_967b5c00b45cebf16e8ead34c899b2fe" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 1</b><br>평점: 4.5⭐<br>리뷰: 396개<br>가격: ₩₩₩</div>`)[0];
+                popup_cdb71e317e4bb99343b5826cf7e695ac.setContent(html_967b5c00b45cebf16e8ead34c899b2fe);
+            
+        
+
+        circle_marker_5955379a2950d0b4278502c858733455.bindPopup(popup_cdb71e317e4bb99343b5826cf7e695ac)
+        ;
+
+        
+    
+    
+            var circle_marker_c3f374497904159aa4692ae2cdce5d60 = L.circleMarker(
+                [37.583063959033055, 126.9782969214021],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_2ebdb975f97d24d30a99be0148c8b4b9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8b6c0c5668747782df8904c5971c5648 = $(`<div id="html_8b6c0c5668747782df8904c5971c5648" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 2</b><br>평점: 4.8⭐<br>리뷰: 301개<br>가격: ₩₩</div>`)[0];
+                popup_2ebdb975f97d24d30a99be0148c8b4b9.setContent(html_8b6c0c5668747782df8904c5971c5648);
+            
+        
+
+        circle_marker_c3f374497904159aa4692ae2cdce5d60.bindPopup(popup_2ebdb975f97d24d30a99be0148c8b4b9)
+        ;
+
+        
+    
+    
+            var circle_marker_77ba1910edbf5787eb2ead88141a90fa = L.circleMarker(
+                [37.48532592948135, 127.09351788962192],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_70da0db1f4c30ab646c0546765bb3b58 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_11a37a0eae7b4ea08ab68c9779412052 = $(`<div id="html_11a37a0eae7b4ea08ab68c9779412052" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 3</b><br>평점: 4.2⭐<br>리뷰: 449개<br>가격: ₩</div>`)[0];
+                popup_70da0db1f4c30ab646c0546765bb3b58.setContent(html_11a37a0eae7b4ea08ab68c9779412052);
+            
+        
+
+        circle_marker_77ba1910edbf5787eb2ead88141a90fa.bindPopup(popup_70da0db1f4c30ab646c0546765bb3b58)
+        ;
+
+        
+    
+    
+            var circle_marker_d5127977ceeb86c172de32f5f18ead12 = L.circleMarker(
+                [37.476395334513406, 126.9367494496487],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_431c87b58fcb3c982d081a4943467de1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4734932dc5735de21a53884c288848e0 = $(`<div id="html_4734932dc5735de21a53884c288848e0" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 4</b><br>평점: 4.8⭐<br>리뷰: 353개<br>가격: ₩</div>`)[0];
+                popup_431c87b58fcb3c982d081a4943467de1.setContent(html_4734932dc5735de21a53884c288848e0);
+            
+        
+
+        circle_marker_d5127977ceeb86c172de32f5f18ead12.bindPopup(popup_431c87b58fcb3c982d081a4943467de1)
+        ;
+
+        
+    
+    
+            var circle_marker_65fa21db3c4c5675d9408d883dda56ef = L.circleMarker(
+                [37.56237907517885, 126.94968108454246],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_c488c9f212d8ba341c6d87ccce331d58 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3ae7186002da64dfd8cad654b1b6d7b9 = $(`<div id="html_3ae7186002da64dfd8cad654b1b6d7b9" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 5</b><br>평점: 4.8⭐<br>리뷰: 209개<br>가격: ₩₩₩</div>`)[0];
+                popup_c488c9f212d8ba341c6d87ccce331d58.setContent(html_3ae7186002da64dfd8cad654b1b6d7b9);
+            
+        
+
+        circle_marker_65fa21db3c4c5675d9408d883dda56ef.bindPopup(popup_c488c9f212d8ba341c6d87ccce331d58)
+        ;
+
+        
+    
+    
+            var circle_marker_11492b243b87d6da25dc4ebd664a6ab4 = L.circleMarker(
+                [37.53769409886141, 126.93298786161698],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_e927b99b4b59b4c52910fe3e855a9ef0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a08c3463b1b2e778ed612c5084dd4147 = $(`<div id="html_a08c3463b1b2e778ed612c5084dd4147" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 6</b><br>평점: 4.4⭐<br>리뷰: 302개<br>가격: ₩₩₩</div>`)[0];
+                popup_e927b99b4b59b4c52910fe3e855a9ef0.setContent(html_a08c3463b1b2e778ed612c5084dd4147);
+            
+        
+
+        circle_marker_11492b243b87d6da25dc4ebd664a6ab4.bindPopup(popup_e927b99b4b59b4c52910fe3e855a9ef0)
+        ;
+
+        
+    
+    
+            var circle_marker_07cf8eee749251d1d0159f254a69a908 = L.circleMarker(
+                [37.49799986862172, 126.92549121335452],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_769244c158f608271d82f7a5232c4037 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_03003bf65ebef71cf59b21e812d515e2 = $(`<div id="html_03003bf65ebef71cf59b21e812d515e2" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 7</b><br>평점: 3.7⭐<br>리뷰: 371개<br>가격: ₩₩₩</div>`)[0];
+                popup_769244c158f608271d82f7a5232c4037.setContent(html_03003bf65ebef71cf59b21e812d515e2);
+            
+        
+
+        circle_marker_07cf8eee749251d1d0159f254a69a908.bindPopup(popup_769244c158f608271d82f7a5232c4037)
+        ;
+
+        
+    
+    
+            var circle_marker_def1a7ad6ddc807ea5ab22e107cc1083 = L.circleMarker(
+                [37.44904959604429, 126.95494461457206],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_7ef8af89884aa297a0948b36cd12fd38 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2a4ccc9cc7e4a7034d604afc5f3b56ed = $(`<div id="html_2a4ccc9cc7e4a7034d604afc5f3b56ed" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 8</b><br>평점: 3.6⭐<br>리뷰: 342개<br>가격: ₩</div>`)[0];
+                popup_7ef8af89884aa297a0948b36cd12fd38.setContent(html_2a4ccc9cc7e4a7034d604afc5f3b56ed);
+            
+        
+
+        circle_marker_def1a7ad6ddc807ea5ab22e107cc1083.bindPopup(popup_7ef8af89884aa297a0948b36cd12fd38)
+        ;
+
+        
+    
+    
+            var circle_marker_f36afafb5cd96b9190baa8753fa117df = L.circleMarker(
+                [37.46858597182567, 127.08107509059792],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_7d1fb2a316d005cd996058632d378d34 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1491f987cfd76d2b012d1e354ce5a586 = $(`<div id="html_1491f987cfd76d2b012d1e354ce5a586" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 9</b><br>평점: 3.7⭐<br>리뷰: 484개<br>가격: ₩₩</div>`)[0];
+                popup_7d1fb2a316d005cd996058632d378d34.setContent(html_1491f987cfd76d2b012d1e354ce5a586);
+            
+        
+
+        circle_marker_f36afafb5cd96b9190baa8753fa117df.bindPopup(popup_7d1fb2a316d005cd996058632d378d34)
+        ;
+
+        
+    
+    
+            var circle_marker_969a19e665f625ff6f1b756fa85cda8b = L.circleMarker(
+                [37.555383767797785, 127.05581935807481],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_6a134d6bb649a08a5815b286399a6add = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_57ed7cdcaddb5e017c83d37187846bd8 = $(`<div id="html_57ed7cdcaddb5e017c83d37187846bd8" style="width: 100.0%; height: 100.0%;"><b>마포구 카페 10</b><br>평점: 4.1⭐<br>리뷰: 80개<br>가격: ₩₩₩</div>`)[0];
+                popup_6a134d6bb649a08a5815b286399a6add.setContent(html_57ed7cdcaddb5e017c83d37187846bd8);
+            
+        
+
+        circle_marker_969a19e665f625ff6f1b756fa85cda8b.bindPopup(popup_6a134d6bb649a08a5815b286399a6add)
+        ;
+
+        
+    
+    
+            var circle_marker_e381218043efc5b4ae410808d90705f0 = L.circleMarker(
+                [37.422412908785, 126.98678982608169],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_bf4570e06e4e2bf06b21661ac738faa5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2815dd6061ae39768c6d410ed9becccc = $(`<div id="html_2815dd6061ae39768c6d410ed9becccc" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 1</b><br>평점: 4.3⭐<br>리뷰: 274개<br>가격: ₩₩₩</div>`)[0];
+                popup_bf4570e06e4e2bf06b21661ac738faa5.setContent(html_2815dd6061ae39768c6d410ed9becccc);
+            
+        
+
+        circle_marker_e381218043efc5b4ae410808d90705f0.bindPopup(popup_bf4570e06e4e2bf06b21661ac738faa5)
+        ;
+
+        
+    
+    
+            var circle_marker_5ac4632cc8fc78d3628a22327f277597 = L.circleMarker(
+                [37.434510428629196, 126.91124149463316],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_4c053efd0c893e41c0567103866ca77c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9938b872364f114ac30eabbe38bcf93e = $(`<div id="html_9938b872364f114ac30eabbe38bcf93e" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 2</b><br>평점: 4.9⭐<br>리뷰: 179개<br>가격: ₩₩</div>`)[0];
+                popup_4c053efd0c893e41c0567103866ca77c.setContent(html_9938b872364f114ac30eabbe38bcf93e);
+            
+        
+
+        circle_marker_5ac4632cc8fc78d3628a22327f277597.bindPopup(popup_4c053efd0c893e41c0567103866ca77c)
+        ;
+
+        
+    
+    
+            var circle_marker_5465eb826f5646641bcbe56cffece30c = L.circleMarker(
+                [37.58737757363881, 126.93564561108519],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_8ef6a313f1c9b456db53936f08756e21 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2e5902824fe9249b0288fbc433e2e8a2 = $(`<div id="html_2e5902824fe9249b0288fbc433e2e8a2" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 3</b><br>평점: 4.8⭐<br>리뷰: 92개<br>가격: ₩₩</div>`)[0];
+                popup_8ef6a313f1c9b456db53936f08756e21.setContent(html_2e5902824fe9249b0288fbc433e2e8a2);
+            
+        
+
+        circle_marker_5465eb826f5646641bcbe56cffece30c.bindPopup(popup_8ef6a313f1c9b456db53936f08756e21)
+        ;
+
+        
+    
+    
+            var circle_marker_2c87b2cc976ba9dfe031148a927be9bc = L.circleMarker(
+                [37.530956488313514, 127.00207150835601],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_3e20c714703e9181e3ca009d504b99fa = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_13373a9a1741b0eac36f9a88e220fa91 = $(`<div id="html_13373a9a1741b0eac36f9a88e220fa91" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 4</b><br>평점: 4.6⭐<br>리뷰: 144개<br>가격: ₩₩₩</div>`)[0];
+                popup_3e20c714703e9181e3ca009d504b99fa.setContent(html_13373a9a1741b0eac36f9a88e220fa91);
+            
+        
+
+        circle_marker_2c87b2cc976ba9dfe031148a927be9bc.bindPopup(popup_3e20c714703e9181e3ca009d504b99fa)
+        ;
+
+        
+    
+    
+            var circle_marker_cacd426ccf12ffada403764056d96ac8 = L.circleMarker(
+                [37.49339316616176, 127.00833633287326],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_282e6c7b301487b61f51e16f839bd8f8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_49ce17ef5201a2eb7d249d8dc4d52b27 = $(`<div id="html_49ce17ef5201a2eb7d249d8dc4d52b27" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 5</b><br>평점: 3.9⭐<br>리뷰: 53개<br>가격: ₩₩</div>`)[0];
+                popup_282e6c7b301487b61f51e16f839bd8f8.setContent(html_49ce17ef5201a2eb7d249d8dc4d52b27);
+            
+        
+
+        circle_marker_cacd426ccf12ffada403764056d96ac8.bindPopup(popup_282e6c7b301487b61f51e16f839bd8f8)
+        ;
+
+        
+    
+    
+            var circle_marker_acc2b7ce6f9318daaa655370a8e6b238 = L.circleMarker(
+                [37.52017626459184, 127.09088543684248],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_5db18ef5881b74a2eef5553b3371ce20 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a1d84158f7cc66518fc0553efa65ac9e = $(`<div id="html_a1d84158f7cc66518fc0553efa65ac9e" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 6</b><br>평점: 4.7⭐<br>리뷰: 214개<br>가격: ₩</div>`)[0];
+                popup_5db18ef5881b74a2eef5553b3371ce20.setContent(html_a1d84158f7cc66518fc0553efa65ac9e);
+            
+        
+
+        circle_marker_acc2b7ce6f9318daaa655370a8e6b238.bindPopup(popup_5db18ef5881b74a2eef5553b3371ce20)
+        ;
+
+        
+    
+    
+            var circle_marker_92e2ae38a2997bcace2888f07f70ac3e = L.circleMarker(
+                [37.460461099009116, 126.94858871573409],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_c61edaa766c14e3676a7616ea08def26 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_07b55c85c4e9919162437afe3657ea45 = $(`<div id="html_07b55c85c4e9919162437afe3657ea45" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 7</b><br>평점: 3.7⭐<br>리뷰: 220개<br>가격: ₩₩₩</div>`)[0];
+                popup_c61edaa766c14e3676a7616ea08def26.setContent(html_07b55c85c4e9919162437afe3657ea45);
+            
+        
+
+        circle_marker_92e2ae38a2997bcace2888f07f70ac3e.bindPopup(popup_c61edaa766c14e3676a7616ea08def26)
+        ;
+
+        
+    
+    
+            var circle_marker_51c0f6dbec1cd2fd1b79456968f833af = L.circleMarker(
+                [37.507869700553194, 127.0977708741238],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_f5f0587ec1b35a113b1558557d9ff65b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_daae23a4466d7606e01dd2e6d6472382 = $(`<div id="html_daae23a4466d7606e01dd2e6d6472382" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 8</b><br>평점: 4.7⭐<br>리뷰: 403개<br>가격: ₩</div>`)[0];
+                popup_f5f0587ec1b35a113b1558557d9ff65b.setContent(html_daae23a4466d7606e01dd2e6d6472382);
+            
+        
+
+        circle_marker_51c0f6dbec1cd2fd1b79456968f833af.bindPopup(popup_f5f0587ec1b35a113b1558557d9ff65b)
+        ;
+
+        
+    
+    
+            var circle_marker_4e304c217ce73e61e0f480f25a815001 = L.circleMarker(
+                [37.564195309000745, 126.95236878997818],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_5b2e247e63ba1ce9978d35185bfbfa05 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a125ebd8bc7ca4a94b9eecbe66c5b52c = $(`<div id="html_a125ebd8bc7ca4a94b9eecbe66c5b52c" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 9</b><br>평점: 4.6⭐<br>리뷰: 414개<br>가격: ₩₩</div>`)[0];
+                popup_5b2e247e63ba1ce9978d35185bfbfa05.setContent(html_a125ebd8bc7ca4a94b9eecbe66c5b52c);
+            
+        
+
+        circle_marker_4e304c217ce73e61e0f480f25a815001.bindPopup(popup_5b2e247e63ba1ce9978d35185bfbfa05)
+        ;
+
+        
+    
+    
+            var circle_marker_db151bc1ee98a97bd2e4e736160d505e = L.circleMarker(
+                [37.59155706080399, 127.07376175859673],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_be2a26f5aa904722078f268e297d6a85 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d9c8f60b6ea5d3f3c6420f806bcfb6d1 = $(`<div id="html_d9c8f60b6ea5d3f3c6420f806bcfb6d1" style="width: 100.0%; height: 100.0%;"><b>용산구 카페 10</b><br>평점: 4.5⭐<br>리뷰: 80개<br>가격: ₩₩</div>`)[0];
+                popup_be2a26f5aa904722078f268e297d6a85.setContent(html_d9c8f60b6ea5d3f3c6420f806bcfb6d1);
+            
+        
+
+        circle_marker_db151bc1ee98a97bd2e4e736160d505e.bindPopup(popup_be2a26f5aa904722078f268e297d6a85)
+        ;
+
+        
+    
+    
+            var circle_marker_ebcc0e633813ba8c31c5c4fe8fbe0ec9 = L.circleMarker(
+                [37.57462574693899, 126.94083677594024],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_ccb2347107d344a30d367bf8d341d27e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_75610e309fa74b587ce829ffab0e3847 = $(`<div id="html_75610e309fa74b587ce829ffab0e3847" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 1</b><br>평점: 4.7⭐<br>리뷰: 410개<br>가격: ₩₩</div>`)[0];
+                popup_ccb2347107d344a30d367bf8d341d27e.setContent(html_75610e309fa74b587ce829ffab0e3847);
+            
+        
+
+        circle_marker_ebcc0e633813ba8c31c5c4fe8fbe0ec9.bindPopup(popup_ccb2347107d344a30d367bf8d341d27e)
+        ;
+
+        
+    
+    
+            var circle_marker_ae381c7732feecb297adcc4cbe69ebf5 = L.circleMarker(
+                [37.464276937824906, 126.99409815091312],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_1ecb2dfea240d842a2c7073dd6baec11 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9771003aacaad2c8e683f4f321c10a4d = $(`<div id="html_9771003aacaad2c8e683f4f321c10a4d" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 2</b><br>평점: 3.6⭐<br>리뷰: 393개<br>가격: ₩₩</div>`)[0];
+                popup_1ecb2dfea240d842a2c7073dd6baec11.setContent(html_9771003aacaad2c8e683f4f321c10a4d);
+            
+        
+
+        circle_marker_ae381c7732feecb297adcc4cbe69ebf5.bindPopup(popup_1ecb2dfea240d842a2c7073dd6baec11)
+        ;
+
+        
+    
+    
+            var circle_marker_76971af5386c2156710630d4e2544b75 = L.circleMarker(
+                [37.50217900357195, 126.93873586945469],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_93a35b280e0d5f262020b7be6e7a6b3b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3dceac729613b08399a1e7c6d0d064c6 = $(`<div id="html_3dceac729613b08399a1e7c6d0d064c6" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 3</b><br>평점: 4.9⭐<br>리뷰: 130개<br>가격: ₩</div>`)[0];
+                popup_93a35b280e0d5f262020b7be6e7a6b3b.setContent(html_3dceac729613b08399a1e7c6d0d064c6);
+            
+        
+
+        circle_marker_76971af5386c2156710630d4e2544b75.bindPopup(popup_93a35b280e0d5f262020b7be6e7a6b3b)
+        ;
+
+        
+    
+    
+            var circle_marker_53aff657d59ecab01e36e2f26afc0a6b = L.circleMarker(
+                [37.44798335692249, 127.04466209658553],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_1794a1338ca2f378edb588600f3de30f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f316f205bccc7bfc66761a4a583980b6 = $(`<div id="html_f316f205bccc7bfc66761a4a583980b6" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 4</b><br>평점: 4.0⭐<br>리뷰: 292개<br>가격: ₩₩₩</div>`)[0];
+                popup_1794a1338ca2f378edb588600f3de30f.setContent(html_f316f205bccc7bfc66761a4a583980b6);
+            
+        
+
+        circle_marker_53aff657d59ecab01e36e2f26afc0a6b.bindPopup(popup_1794a1338ca2f378edb588600f3de30f)
+        ;
+
+        
+    
+    
+            var circle_marker_832de21e54babe54723ae09471fa37ff = L.circleMarker(
+                [37.429528379660674, 126.95365871739503],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_52f6366b14774930b28d6b39df67ace8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_26fcab04030624ea1264aa73474662da = $(`<div id="html_26fcab04030624ea1264aa73474662da" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 5</b><br>평점: 3.9⭐<br>리뷰: 380개<br>가격: ₩₩</div>`)[0];
+                popup_52f6366b14774930b28d6b39df67ace8.setContent(html_26fcab04030624ea1264aa73474662da);
+            
+        
+
+        circle_marker_832de21e54babe54723ae09471fa37ff.bindPopup(popup_52f6366b14774930b28d6b39df67ace8)
+        ;
+
+        
+    
+    
+            var circle_marker_c826d6fadf17005e42ba83220fd5c5d3 = L.circleMarker(
+                [37.41672615061987, 127.0536938935786],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_9325856a66dd85d8f1e74121dcbb475d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_aaa838f338424694a97f845f71e855b2 = $(`<div id="html_aaa838f338424694a97f845f71e855b2" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 6</b><br>평점: 4.7⭐<br>리뷰: 422개<br>가격: ₩₩₩</div>`)[0];
+                popup_9325856a66dd85d8f1e74121dcbb475d.setContent(html_aaa838f338424694a97f845f71e855b2);
+            
+        
+
+        circle_marker_c826d6fadf17005e42ba83220fd5c5d3.bindPopup(popup_9325856a66dd85d8f1e74121dcbb475d)
+        ;
+
+        
+    
+    
+            var circle_marker_f13db98fef1694c2d4345c1aecc019f7 = L.circleMarker(
+                [37.593106311469754, 127.05138460710747],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_8c187297cf5b2e0dcb97732d94c0f70c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_753335ce51a2daf87cbbea23fc284280 = $(`<div id="html_753335ce51a2daf87cbbea23fc284280" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 7</b><br>평점: 4.9⭐<br>리뷰: 80개<br>가격: ₩</div>`)[0];
+                popup_8c187297cf5b2e0dcb97732d94c0f70c.setContent(html_753335ce51a2daf87cbbea23fc284280);
+            
+        
+
+        circle_marker_f13db98fef1694c2d4345c1aecc019f7.bindPopup(popup_8c187297cf5b2e0dcb97732d94c0f70c)
+        ;
+
+        
+    
+    
+            var circle_marker_9d6a0271e83c80f782a84f6da19829a9 = L.circleMarker(
+                [37.45521016545066, 127.00961902063985],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_7e71c4a27f4fad08b7c32645ae8fee92 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9c095c3a0e644a987ba1265ba64867ff = $(`<div id="html_9c095c3a0e644a987ba1265ba64867ff" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 8</b><br>평점: 4.6⭐<br>리뷰: 208개<br>가격: ₩₩₩</div>`)[0];
+                popup_7e71c4a27f4fad08b7c32645ae8fee92.setContent(html_9c095c3a0e644a987ba1265ba64867ff);
+            
+        
+
+        circle_marker_9d6a0271e83c80f782a84f6da19829a9.bindPopup(popup_7e71c4a27f4fad08b7c32645ae8fee92)
+        ;
+
+        
+    
+    
+            var circle_marker_0b68ce222b680633d2fbdfdf7b0f9d90 = L.circleMarker(
+                [37.43116430849317, 127.04469619519784],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_daddbc13e35fd31d26b1d50d154e46da = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ce66749b6a2f51309d679523bde6d52a = $(`<div id="html_ce66749b6a2f51309d679523bde6d52a" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 9</b><br>평점: 3.7⭐<br>리뷰: 98개<br>가격: ₩</div>`)[0];
+                popup_daddbc13e35fd31d26b1d50d154e46da.setContent(html_ce66749b6a2f51309d679523bde6d52a);
+            
+        
+
+        circle_marker_0b68ce222b680633d2fbdfdf7b0f9d90.bindPopup(popup_daddbc13e35fd31d26b1d50d154e46da)
+        ;
+
+        
+    
+    
+            var circle_marker_e6ff0f5dec8d8df7075177c680283728 = L.circleMarker(
+                [37.4251329493222, 127.06705185732523],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_f971e98811f8c1d0d08ce25f222dd0e1);
+        
+    
+        var popup_43daba63ee06a170ced9e40332b73ad6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_26d95573327f05d7321d4ea3bac53c7a = $(`<div id="html_26d95573327f05d7321d4ea3bac53c7a" style="width: 100.0%; height: 100.0%;"><b>송파구 카페 10</b><br>평점: 4.6⭐<br>리뷰: 491개<br>가격: ₩₩</div>`)[0];
+                popup_43daba63ee06a170ced9e40332b73ad6.setContent(html_26d95573327f05d7321d4ea3bac53c7a);
+            
+        
+
+        circle_marker_e6ff0f5dec8d8df7075177c680283728.bindPopup(popup_43daba63ee06a170ced9e40332b73ad6)
+        ;
+
+        
+    
+</script>
+</html>

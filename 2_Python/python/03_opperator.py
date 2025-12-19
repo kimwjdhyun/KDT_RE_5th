@@ -72,6 +72,7 @@ print(hi * 3) # Hi~! Hi~! Hi~!
 # /, - : 지원하지 않는다!!
 
 # 실습 2. 
+'''
 intro = "둠칫"
 drop = "두둠칫"
 print(intro + (drop * 3))
@@ -81,3 +82,6 @@ d = '부부'
 w = '도파민'
 
 print(i + d + d + d +i + d + d + d + w)
+'''
+
+
