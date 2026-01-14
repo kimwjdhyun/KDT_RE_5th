@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head : 문서 정보 -->
+    <!-- meta : 페이지 설명, 화면 크기 등 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서 제목 -->
+    <title>Document</title>
+    <!-- style 정보 -->
+    <style></style>
+    <!-- link : 외부 리소스와의 연결 정의 -->
+    <link rel="stylesheet" href="">
+    <!-- script : javascript 정의 -->
+    <script></script>
+</head>
+<body>
+    <!-- 제목 태그 -->
+    <h1>안녕하세요</h1>
+    <h2>안녕하세요</h2>
+    <h3>안녕하세요</h3>
+    <h4>안녕하세요</h4>
+    <h5>안녕하세요</h5>
+    <h6>안녕하세요</h6>
+    <!-- 본문 태그 -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum totam suscipit, dignissimos aliquid, explicabo, a repudiandae alias minima modi quasi corporis ipsum exercitationem illum quidem vero dolores nihil reiciendis ab.</p>
+    <!-- 줄바꿈 태그 -->
+    <span>인라인</span>
+    <br />
+    <span>인라인</span>
+    <br />
+    <!-- 수평 줄 -->
+    <hr />
+    <!-- 순서 없는 목록(unordered list), type 마커 모양 : circle, square, none 등 -->
+    <ul type="square">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+    </ul>
+    <!-- 순서 있는 목록(ordered list), type : 1, A, a I, i -->
+    <ol type="i" start="3" reversed>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <a href="/">인라인 요소</a>
+
+    <span><b>두껍게</b></span>
+    <span><strong>strong</strong></span>
+
+    <!-- img 태그(인라인 요소 이기에 줄바꿈 안됨) -->
+    <br>
+    <img src="https://i.pinimg.com/736x/bd/76/b4/bd76b48c1fbe28b48476c229829444b6.jpg" 
+    alt="cat" width="200">
+
+    <!-- 상대 경로 -->
+    <img src="./image.png" alt="turtle">
+    <!-- 절대 경로(pc기준) -->
+    <img src="C:\Users\dkreh\Desktop\KDT_RE_5th\4_Web\image.png" alt="turtle">
+    <!-- 절대 경로(라이브 서버 기준) -->
+    <img src="/4_Web/image.png" alt="turtle">
+
+    <!-- a 태그 : 링크 연결(target="_blank" 사용시 새로운 탭으로 연결) -->
+    <a href="/">인라인 요소</a>
+    <br>
+    <a href="https://www.naver.com" target="_blank">네이버</a>
+
+    <hr />
+    <!-- form, input 태그 -->
+    <form>
+        <input type="button" value="버튼">
+        <input type="text">
+        <input type="password" name="" id="">
+        <input type="checkbox" name="fruits" value="apple" checked> 사과
+        <input type="checkbox" name="fruits" value="banana"> 바나나
+        <br />
+        <input type="radio" name="gender" value="man" checked> 남자
+        <input type="radio" name="gender" value="woman"> 여자
+        <input type="date" name="" id="">
+        <input type="datetime-local" name="" id="">
+        <br />
+        <select name="" id="">
+            <optgroup label="커피">
+                <option value="americano">아메리카노</option>
+                <option value="latte">카페라뗴</option>
+                <option value="espresso">에스프레소</option>
+            </optgroup>
+            <optgroup label="주스">
+                <option value="oprange">오렌지주스</option>
+                <option value="kiwi">키위주스</option>
+            </optgroup>
+        </select>
+    </form>
+</body>
+</html>
