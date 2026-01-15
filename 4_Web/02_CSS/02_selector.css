@@ -1,0 +1,32 @@
+/* 전체 선택자 */
+* {
+    color: red;
+}
+
+/* 태그 선택자 : 태그 이름 */
+h1 {
+    color: blue;
+}
+
+p {
+    background-color: yellow;
+}
+
+/* 클래스 선택자 : .클래스 이름 */
+.font {
+    font-size: 25px;
+}
+
+.bg {
+    background-color: violet;
+}
+
+.font.bg {
+    font-size: 40px;
+    background-color: aqua;
+}
+
+/* 아이디 선택자 :#아이디이름 */
+#second {
+    font-weight: 900;
+}
