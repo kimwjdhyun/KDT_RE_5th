@@ -1,0 +1,8 @@
+/* 속성 선택자 */
+[disabled] {
+    background-color: red;
+}
+
+input:not([disabled]) {
+    background-color: blue;
+}
