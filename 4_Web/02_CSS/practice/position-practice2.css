@@ -1,0 +1,70 @@
+div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    background-image: url("https://img.freepik.com/premium-vector/summer-background-with-grass-illustration_118124-2226.jpg")
+}
+
+.face {
+    background-color: skyblue;
+    position: relative;
+}
+
+.eye_white {
+    background-color: whitesmoke;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 25px;
+    top: 20px;
+}
+
+.eye_black {
+    background-color: #020714;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+.body_1 {
+    background-color: blue;
+    position: relative;
+    top: -60px;
+    left: 70px;
+}
+
+.body_2 {
+    background-color: #2512a1;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+
+.body_3 {
+    background-color: #04a8c5;
+    position: absolute;
+    left: 90px;
+    top: 39px;
+}
+
+.body_4 {
+    background-color: #07daa8;
+    position: absolute;
+    left: 160px;
+    top: 38px;
+}
+
+.body_5 {
+    background-color: #380bbf;
+    position: absolute;
+    left: 240px;
+    top: 41px;
+}

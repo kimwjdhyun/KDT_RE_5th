@@ -1,0 +1,28 @@
+* {
+    color: #020714;
+}
+
+.em-box {
+    border: solid blue;
+    border-width: 3em 6em 9em 12em;
+}
+
+.px-box {
+    border: solid red;
+    border-style:dashed ;
+}
+
+.percent-box {
+    border: solid black;
+    border-color: purple ;
+    width: 100%;
+}
+
+.viewport-box {
+    border: 10px solid red;
+    border-top-color: #020714 ;
+    border-top-width: 10px;
+    border-bottom-color: #020714;
+    border-bottom-width: 10px;
+    border-right-color: aqua ;
+}
