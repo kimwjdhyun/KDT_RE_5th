@@ -30,6 +30,7 @@ body {
   transition: transform 0.1s, background-color 0.7s;
 }
 .container .heroes .hero:hover {
+  cursor: pointer;
   background-color: #ff9c00;
   transform: skewX(-14deg) scale(1.3);
   z-index: 1;
