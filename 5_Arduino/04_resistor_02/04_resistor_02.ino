@@ -7,8 +7,13 @@ void loop() {
   int resistor = analogRead(A0);
   Serial.println(resistor);
 
-  resistor = resistor / 4;
-  
+  // resistor = resistor / 4;
+  resistor = map(resistor, 0, 1023, 0, 255);
+  // map() : 첫 번째 매개변수를 넷/다섯번째 범위로 1:1 매핑해주는 역할
+  // map(매핑하고자 하는 값, 기존값의 최솟값, 기존값의 최댓값, 매핑할 값의 최솟값, 매핑할 값의 최댓값);
+  // map(50, 50, 100, 0, 50)
+  // 첫 번째 매개변수 => 50 => 50 ~ 100
+  // 결과값 -> 0 ~ 50
   analogWrite(9, resistor);
   delay(100);
 }
