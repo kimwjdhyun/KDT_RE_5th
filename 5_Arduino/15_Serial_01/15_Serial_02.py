@@ -34,5 +34,4 @@ def led():
     # 예를 들어서 desred == "on"일때는 jsonify({"전송" : False, "state" : state})
 
 if __name__ == "__main__":
-    app.run(host = "0, 0, 0, 0", port = 5000)
-    
+    app.run(host = "0.0.0.0", port = 5000)
