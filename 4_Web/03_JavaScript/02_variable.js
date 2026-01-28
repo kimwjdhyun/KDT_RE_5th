@@ -71,7 +71,6 @@ c = "const 재할당 시도"; //02_variable.js:56 Uncaught TypeError: Assignment
 
 // // 변수에 공백 사용 불가(띄어쓰기x)
 // let my var;
-// // 사용 가능한 특수 문자 : -, _, $
-// let my-var;
+// // 사용 가능한 특수 문자 : _, $
 // let my_var;
 // let $myvar;
