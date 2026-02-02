@@ -7,7 +7,7 @@ console.log(3);
 
 // 
 // ex. 편의점 -> 음료를 고르고 -> 산다.
-/*
+
 function goMart() {
     console.log('마트에서 어떤 음료를 살지 고민...');
 }
@@ -30,7 +30,7 @@ let price;
 goMart();
 pickDrink();
 pay();
-*/
+
 ///////////////////////
 
 //1. 콜백 함수를 이용한 비동기 처리
@@ -56,3 +56,34 @@ let product;
 let price;
 goMart();
 pickDrink(pay);
+
+//실습 1. callback hell
+function call(name, cb) {
+    setTimeout(() => {
+        console.log(name);
+        cb(name)
+    }, 2000);
+}
+
+function back(cb) {
+    setTimeout(() => {
+        console.log('back');
+        cb('back')
+    }, 2000);
+}
+
+function hell(cb) {
+    setTimeout(() => {
+        cb('callback hell')
+    }, 2000);
+}
+
+call('kim', function (name) {
+    console.log(name + ' 반가워');
+    back(function (txt) {
+        console.log(txt + ' 을 실행했구나?');
+        hell(function (message) {
+            console.log('여기는 ' + message);
+        });
+    });
+});
