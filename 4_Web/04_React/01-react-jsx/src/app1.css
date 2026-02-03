@@ -1,0 +1,16 @@
+.main {
+    background-color: #eed19b;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #d4916b;
+    font-size: 32px;
+}
+
+input {
+    padding: 5px;
+    margin: 10px 5px;
+}
