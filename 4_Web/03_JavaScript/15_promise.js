@@ -6,7 +6,7 @@
 - 성공, 실패에 대한 결과는 then, catch 메서드로 이어 받아서 처리 가능
 -> 성공이던 실패던 무언가의 "최종 결과"
 */
-/*
+
 // 1. promise 생성 코드
 function promise1(flag) {
     return new Promise((resolve, reject) => {
@@ -25,8 +25,8 @@ promise1(5 > 3)
     .catch(function(result) {
         console.log(result);
     })
-*/
-/*
+
+
 // 3. 프로미스 예제
 function goMart() {
     console.log('마트에서 어떤 음료를 살지 고민...');
@@ -51,7 +51,7 @@ let product;
 let price;
 goMart();
 pickDrink().then(pay);
-*/
+
 
 function add(n1, n2) {
   return new Promise(function (resolve, reject) {

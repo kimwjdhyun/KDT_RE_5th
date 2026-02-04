@@ -53,7 +53,7 @@ function App() {
           <h2 style={{textAlign:'left'}}>
             제 반려 동물의 이름은 <u>{name1}</u>입니다.
           <br />
-          동물은 <u>{animal}</u>입니다.
+            <u>{name1}</u>은 <u>{animal}</u>입니다.
           </h2>
           <div>
             {3 + 5 == 8 ? '정답입니다!' : '오답입니다!'}
