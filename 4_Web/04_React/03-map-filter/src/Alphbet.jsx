@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Alphabet() {
-    const list = ["a", "b", "c", "d", "e"];
+    // const list = ["a", "b", "c", "d", "e"];
     // input 값을 state 변수로 선언
     const [inputValue, setInputValue] = useState("");
     const [alphbet, setAlphbet] = useState(['b', 'a', 'n', 'a', 'n', 'a']);
