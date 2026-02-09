@@ -1,10 +1,10 @@
 import ProductList from "../components/ProductList";
 
-function ProductPage() {
+function ProductPage({ products }) {
   return (
     <div>
       <h1>Product Page</h1>
-      <ProductList />
+      <ProductList products={products} />
     </div>
   );
 }
