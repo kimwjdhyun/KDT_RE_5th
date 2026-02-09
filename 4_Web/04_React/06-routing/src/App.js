@@ -9,6 +9,7 @@ import axios from 'axios'
 import PracticePage from './pages/PracticePage';
 import Practice from './components/Practice';
 import Practice2 from './components/Practice2';
+import NotFound from './pages/NotFound';
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -36,6 +37,7 @@ function App() {
 				<Route path="/practice" element={<PracticePage />} />
 				<Route path="/student/:name" element={<Practice />} />
 				<Route path="/student/new" element={<Practice2 />} />
+				<Route path="*" element = {<NotFound />}/>
 			</Routes> 
 		</div>
 	);
