@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function MainPage() {
 	const [searchParams, setSearchParmas] = useSearchParams();
@@ -13,6 +14,10 @@ function MainPage() {
 			>
 				Dark Mode
 			</button>
+		<div>
+			<Link to="/practice">Practice</Link>
+    	</div>
+
 		</div>
 	);
 }
