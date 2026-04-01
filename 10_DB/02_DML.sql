@@ -133,3 +133,72 @@ FROM student
 GROUP BY class_id
 HAVING AVG(age) >= 24
 ORDER BY avg_age DESC;
+
+-- UPDATE 문
+SELECT * FROM student;
+
+UPDATE student SET age = 26 WHERE student_id = "1";
+
+UPDATE student SET age = age + 1 WHERE class_id = "CLS01" 
+AND age < 25
+AND class_id IN (
+	SELECT class_id FROM class WHERE room = 'B-101'
+);
+
+-- DELETE 문
+DELETE FROM class WHERE room LIKE"G%";
+
+DELETE FROM student WHERE join_date < '2024-03-01';
+
+
+-- JOIN
+CREATE DATABASE codingon_store_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE codingon_store_db;
+
+CREATE TABLE customers (
+	cust_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100),
+    city VARCHAR(50),
+    phone VARCHAR(20),
+    birth DATE,
+    membership_level VARCHAR(20)
+);
+
+CREATE TABLE orders (
+	order_id INT AUTO_INCREMENT PRIMARY KEY,
+    cust_id INT,
+    order_date DATE,
+    order_status VARCHAR(20),
+    payment_method VARCHAR(30),
+    delivery_fee INT DEFAULT 0,
+    CONSTRAINT fk_cutomer
+		FOREIGN KEY (cust_id) REFERENCES customers(cust_id)
+);
+
+CREATE TABLE products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100), 
+    price INT,
+    stock_quantity INT,
+    category VARCHAR(50),
+    manufacturer VARCHAR(50)
+);
+
+CREATE TABLE order_items (
+    order_item_id INT AUTO_INCREMENT PRIMARY KEY,
+    quantity INT NOT NULL,
+    unit_price INT,
+    discount_rate DECIMAL(5,2)
+);
+
+CREATE TABLE employees (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    manager_id INT,
+    hire_date DATE,
+    department VARCHAR(50),
+    position VARCHAR(50),
+    CONSTRAINT fk_manager
+        FOREIGN KEY (manager_id) REFERENCES employees(employee_id)
+);
