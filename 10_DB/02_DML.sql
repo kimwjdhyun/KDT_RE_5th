@@ -185,11 +185,17 @@ CREATE TABLE products (
     manufacturer VARCHAR(50)
 );
 
+DROP TABLE order_items;
+
 CREATE TABLE order_items (
     order_item_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    product_id INT NOT NULL,
     quantity INT NOT NULL,
     unit_price INT,
-    discount_rate DECIMAL(5,2)
+    discount_rate DECIMAL(5,2),
+    CONSTRAINT fk_order FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
 CREATE TABLE employees (
